@@ -1,9 +1,16 @@
 /*
  * Registros diários de controle de pátio — TFPM.
  *
- * Para lançar um novo dia, copie o objeto abaixo, ajuste os valores e
+ * Para lançar um novo dia, copie um dos objetos abaixo, ajuste os valores e
  * acrescente ao início do array (a lista é ordenada do mais recente
  * para o mais antigo).
+ *
+ * Dois modelos convivem no mesmo arquivo:
+ *  - "Resumo TFPM"        — o resumo curto do turno;
+ *  - "Report Diário TFPM" — o report completo, com ciclo, TMM e parcial.
+ *
+ * Tudo além de `data`, `tipo` e `patio` é opcional: o que o registro não
+ * tiver simplesmente não aparece no painel, em vez de ficar zerado.
  *
  * Convenções:
  *  - Valores numéricos usam ponto decimal aqui; a formatação pt-BR
@@ -14,7 +21,43 @@
 
 window.REGISTROS = [
   {
+    data: "2026-08-05",
+    tipo: "Resumo TFPM",
+    envio: null,
+
+    patio: {
+      recepcao: { lotes: 3 },
+      vvs: { lotes: 7 },
+      classificacao: { lotes: 3 },
+      formacao: { trens: ["M27", "M29"] },
+      ctr: { lotes: 6 },
+      buffer: { gdu: 10, gdt: 20 },
+    },
+
+    descarregamento: {
+      d1: 52.0,
+      oferta: 56.2,
+      ofertado: 33.2,
+      capacidade: 52.0,
+      realizado: 35.0,
+    },
+
+    tracao: {
+      sentido: "A Frente",
+      emDescarga: "M05",
+      emDescargaObs: "D+1",
+      pulmao: 7,
+      liberado: "1M9",
+    },
+
+    partidas: {
+      ultimaPartida: "M25",
+    },
+  },
+
+  {
     data: "2026-08-04",
+    tipo: "Report Diário TFPM",
     envio: "18:30",
 
     patio: {

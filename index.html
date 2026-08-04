@@ -11,6 +11,7 @@
       <div class="topo-titulo">
         <p class="migalha">Coordenação de Controle de Pátio · TFPM</p>
         <h1>Controle de Pátio</h1>
+        <p class="selo" id="tipo"></p>
       </div>
       <div class="topo-controles">
         <label for="seletor-data">Data do registro</label>
@@ -20,20 +21,20 @@
     </header>
 
     <main id="conteudo">
-      <section class="bloco" aria-labelledby="t-patio">
+      <section class="bloco" id="sec-patio" aria-labelledby="t-patio">
         <h2 id="t-patio">Ocupação do Pátio</h2>
         <div class="grade-patio" id="patio"></div>
       </section>
 
-      <section class="bloco" aria-labelledby="t-indicadores">
+      <section class="bloco" id="sec-indicadores" aria-labelledby="t-indicadores">
         <h2 id="t-indicadores">Indicadores do Ciclo</h2>
         <div class="grade-indicadores" id="indicadores"></div>
       </section>
 
-      <section class="bloco" aria-labelledby="t-descarga">
+      <section class="bloco" id="sec-descarga" aria-labelledby="t-descarga">
         <h2 id="t-descarga">Descarregamento</h2>
         <div class="grade-numeros" id="descarga-resumo"></div>
-        <div class="cartao">
+        <div class="cartao" id="card-parcial">
           <h3>Parcial do descarregamento</h3>
           <div class="rolagem">
             <table id="descarga-parcial"></table>
@@ -43,18 +44,18 @@
         <div class="cartao" id="descarga-impactos"></div>
       </section>
 
-      <section class="bloco duas-colunas" aria-labelledby="t-tracao">
-        <div>
+      <section class="bloco duas-colunas" id="sec-tracao" aria-labelledby="t-tracao">
+        <div id="bloco-tracao">
           <h2 id="t-tracao">Tração</h2>
           <div class="grade-numeros" id="tracao"></div>
         </div>
-        <div>
+        <div id="bloco-partidas">
           <h2>Partida de Trens</h2>
           <div class="grade-numeros" id="partidas"></div>
         </div>
       </section>
 
-      <section class="bloco" aria-labelledby="t-atencao">
+      <section class="bloco" id="sec-atencao" aria-labelledby="t-atencao">
         <h2 id="t-atencao">Pontos de Atenção</h2>
         <div class="cartao" id="atencao"></div>
       </section>

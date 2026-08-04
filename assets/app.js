@@ -1,4 +1,8 @@
-/* Renderiza o registro diário de controle de pátio a partir de window.REGISTROS. */
+/* Renderiza o registro diário de controle de pátio a partir de window.REGISTROS.
+ *
+ * Um registro pode vir no modelo curto ("Resumo TFPM") ou no completo
+ * ("Report Diário TFPM"). Tudo além da ocupação do pátio é opcional: a seção
+ * some quando o registro não traz o dado, em vez de aparecer zerada. */
 
 (function () {
   "use strict";
@@ -39,6 +43,14 @@
     while (no.firstChild) no.removeChild(no.firstChild);
   }
 
+  function mostrar(id, visivel) {
+    document.getElementById(id).hidden = !visivel;
+  }
+
+  function preenchido(valor) {
+    return valor !== null && valor !== undefined && valor !== "";
+  }
+
   /* Classe de cor do saldo: depende de qual direção é boa para o indicador. */
   function classeSaldo(saldo, melhor) {
     if (Math.abs(saldo) < 0.005) return "";
@@ -46,11 +58,16 @@
     return favoravel ? "bom" : "ruim";
   }
 
-  function cartaoNumero(rotulo, valor, classe) {
+  function cartaoNumero(rotulo, valor, classe, nota) {
     var no = el("div", "numero");
     no.appendChild(el("span", "rotulo", rotulo));
     no.appendChild(el("span", "valor" + (classe ? " " + classe : ""), valor));
+    if (nota) no.appendChild(el("span", "nota", nota));
     return no;
+  }
+
+  function plural(n, singular, plural_) {
+    return n === 1 ? singular : plural_;
   }
 
   /* ---------- ocupação do pátio ---------- */
@@ -60,16 +77,12 @@
     limpar(alvo);
 
     function setor(nome, valor, unidade, extras) {
-      var vazio = valor === 0;
-      var no = el("div", "setor" + (vazio ? " vazio" : ""));
+      var no = el("div", "setor" + (valor === 0 ? " vazio" : ""));
       no.appendChild(el("p", "setor-nome", nome));
-      no.appendChild(
-        el("p", "setor-valor", typeof valor === "number" ? String(valor).padStart(2, "0") : valor)
-      );
+      no.appendChild(el("p", "setor-valor", String(valor).padStart(2, "0")));
       if (unidade) no.appendChild(el("p", "setor-unidade", unidade));
       if (extras) no.appendChild(extras);
       alvo.appendChild(no);
-      return no;
     }
 
     setor("Recepção", patio.recepcao.lotes, plural(patio.recepcao.lotes, "lote", "lotes"));
@@ -103,15 +116,17 @@
     setor("Buffer", buffer.gdu + buffer.gdt, "vagões no total", detalhe);
   }
 
-  function plural(n, singular, plural_) {
-    return n === 1 ? singular : plural_;
-  }
-
   /* ---------- indicadores ---------- */
 
   function renderIndicadores(indicadores) {
     var alvo = document.getElementById("indicadores");
     limpar(alvo);
+
+    if (!indicadores || !indicadores.length) {
+      mostrar("sec-indicadores", false);
+      return;
+    }
+    mostrar("sec-indicadores", true);
 
     indicadores.forEach(function (ind) {
       var saldo = ind.realizado - ind.programa;
@@ -162,20 +177,27 @@
   /* ---------- descarregamento ---------- */
 
   function renderDescarregamento(d) {
+    if (!d) {
+      mostrar("sec-descarga", false);
+      return;
+    }
+    mostrar("sec-descarga", true);
+
     var resumo = document.getElementById("descarga-resumo");
     limpar(resumo);
 
     var aderencia = d.realizado - d.capacidade;
     [
-      ["D+30", num(d.d30), ""],
-      ["S+X", num(d.sx), ""],
-      ["D+1", num(d.d1), ""],
-      ["Oferta", num(d.oferta), "bom"],
-      ["Ofertado", num(d.ofertado), ""],
-      ["Capacidade", num(d.capacidade), "bom"],
-      ["Realizado", num(d.realizado), classeSaldo(aderencia, "maior")],
+      ["D+30", "d30", ""],
+      ["S+X", "sx", ""],
+      ["D+1", "d1", ""],
+      ["Oferta", "oferta", "bom"],
+      ["Ofertado", "ofertado", ""],
+      ["Capacidade", "capacidade", "bom"],
+      ["Realizado", "realizado", classeSaldo(aderencia, "maior")],
     ].forEach(function (c) {
-      resumo.appendChild(cartaoNumero(c[0], c[1], c[2]));
+      if (!preenchido(d[c[1]])) return;
+      resumo.appendChild(cartaoNumero(c[0], num(d[c[1]]), c[2]));
     });
 
     if (d.trens && d.trens.length) {
@@ -189,13 +211,22 @@
       resumo.appendChild(no);
     }
 
-    renderParcial(d.parcial);
-    renderGrafico(d.parcial);
+    var temParcial = !!(d.parcial && d.parcial.horas && d.parcial.horas.length);
+    mostrar("card-parcial", temParcial);
+    if (temParcial) {
+      renderParcial(d.parcial);
+      renderGrafico(d.parcial);
+    }
 
     var impactos = document.getElementById("descarga-impactos");
     limpar(impactos);
-    impactos.appendChild(el("h3", null, "Impactos no descarregamento"));
-    impactos.appendChild(listaTexto(d.impactos, "Sem impactos registrados."));
+    if (d.impactos && d.impactos.length) {
+      mostrar("descarga-impactos", true);
+      impactos.appendChild(el("h3", null, "Impactos no descarregamento"));
+      impactos.appendChild(listaTexto(d.impactos));
+    } else {
+      mostrar("descarga-impactos", false);
+    }
   }
 
   function renderParcial(parcial) {
@@ -223,7 +254,7 @@
     var linhaReal = el("tr");
     linhaReal.appendChild(el("th", null, "Descarregado"));
     parcial.descarregado.forEach(function (v, i) {
-      if (v === null || v === undefined) {
+      if (!preenchido(v)) {
         linhaReal.appendChild(el("td", null, TRAVESSAO));
         return;
       }
@@ -344,27 +375,41 @@
     alvo.appendChild(legenda);
   }
 
-  /* ---------- tração, partidas e textos ---------- */
+  /* ---------- tração e partidas ---------- */
 
-  function renderTracao(t) {
-    var alvo = document.getElementById("tracao");
-    limpar(alvo);
-    alvo.appendChild(cartaoNumero("Sentido", t.sentido, ""));
-    alvo.appendChild(cartaoNumero("Em descarga", t.emDescarga, ""));
-    alvo.appendChild(cartaoNumero("Pulmão", t.pulmao + " locos", ""));
-    alvo.appendChild(cartaoNumero("Liberado", t.liberado, "bom"));
+  function renderTracaoEPartidas(t, p) {
+    var temTracao = preencherCartoes("tracao", [
+      ["Sentido", t && t.sentido, ""],
+      ["Em descarga", t && t.emDescarga, "", t && t.emDescargaObs],
+      ["Pulmão", t && preenchido(t.pulmao) ? t.pulmao + " " + plural(t.pulmao, "loco", "locos") : null, ""],
+      ["Tração liberada", t && t.liberado, "bom"],
+    ]);
+    var temPartidas = preencherCartoes("partidas", [
+      ["Programa D", p && p.programaD, ""],
+      ["Mina D+1", p && p.minaD1, ""],
+      ["Última partida", p && p.ultimaPartida, "bom"],
+    ]);
+
+    mostrar("bloco-tracao", temTracao);
+    mostrar("bloco-partidas", temPartidas);
+    mostrar("sec-tracao", temTracao || temPartidas);
   }
 
-  function renderPartidas(p) {
-    var alvo = document.getElementById("partidas");
+  function preencherCartoes(id, campos) {
+    var alvo = document.getElementById(id);
     limpar(alvo);
-    alvo.appendChild(cartaoNumero("Programa D", p.programaD, ""));
-    alvo.appendChild(cartaoNumero("Mina D+1", p.minaD1, ""));
-    alvo.appendChild(cartaoNumero("Última partida", p.ultimaPartida, "bom"));
+    var algum = false;
+    campos.forEach(function (c) {
+      if (!preenchido(c[1])) return;
+      algum = true;
+      alvo.appendChild(cartaoNumero(c[0], String(c[1]), c[2], c[3]));
+    });
+    return algum;
   }
 
-  function listaTexto(itens, vazio) {
-    if (!itens || !itens.length) return el("p", null, vazio);
+  /* ---------- textos ---------- */
+
+  function listaTexto(itens) {
     var ul = el("ul", "lista-texto");
     itens.forEach(function (i) {
       ul.appendChild(el("li", null, i));
@@ -373,21 +418,31 @@
   }
 
   function renderAtencao(itens) {
+    if (!itens || !itens.length) {
+      mostrar("sec-atencao", false);
+      return;
+    }
+    mostrar("sec-atencao", true);
     var alvo = document.getElementById("atencao");
     limpar(alvo);
-    alvo.appendChild(listaTexto(itens, "Nenhum ponto de atenção registrado."));
+    alvo.appendChild(listaTexto(itens));
   }
 
   /* ---------- orquestração ---------- */
 
   function render(registro) {
-    document.getElementById("envio").textContent =
-      "Envio: " + dataLonga(registro.data) + " " + registro.envio;
+    var selo = document.getElementById("tipo");
+    selo.textContent = registro.tipo || "";
+    selo.hidden = !registro.tipo;
+
+    document.getElementById("envio").textContent = registro.envio
+      ? "Envio: " + dataLonga(registro.data) + " " + registro.envio
+      : "Horário de envio não informado";
+
     renderPatio(registro.patio);
     renderIndicadores(registro.indicadores);
     renderDescarregamento(registro.descarregamento);
-    renderTracao(registro.tracao);
-    renderPartidas(registro.partidas);
+    renderTracaoEPartidas(registro.tracao, registro.partidas);
     renderAtencao(registro.atencao);
   }
 
