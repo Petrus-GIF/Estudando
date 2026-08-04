@@ -1,9 +1,10 @@
 /*
  * Registros diários de controle de pátio — TFPM.
  *
- * Para lançar um novo dia, copie um dos objetos abaixo, ajuste os valores e
- * acrescente ao início do array (a lista é ordenada do mais recente
- * para o mais antigo).
+ * Para lançar um novo registro, copie um dos objetos abaixo, ajuste os
+ * valores e acrescente ao início do array. A lista é ordenada por data,
+ * do mais recente para o mais antigo; quando dois registros são do mesmo
+ * dia (um resumo e um report, por exemplo), vale a ordem deste arquivo.
  *
  * Dois modelos convivem no mesmo arquivo:
  *  - "Resumo TFPM"        — o resumo curto do turno;
@@ -21,7 +22,7 @@
 
 window.REGISTROS = [
   {
-    data: "2026-08-05",
+    data: "2026-08-04",
     tipo: "Resumo TFPM",
     envio: null,
 

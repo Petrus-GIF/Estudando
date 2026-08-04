@@ -32,6 +32,15 @@
     return p[2] + "/" + p[1] + "/" + p[0];
   }
 
+  /* Um mesmo dia pode ter resumo e report, então o rótulo carrega o modelo
+   * e o horário para os dois não ficarem indistinguíveis na lista. */
+  function rotuloRegistro(r) {
+    var partes = [dataLonga(r.data)];
+    if (r.tipo) partes.push(r.tipo);
+    if (r.envio) partes.push(r.envio);
+    return partes.join(" · ");
+  }
+
   function el(tag, classe, texto) {
     var n = document.createElement(tag);
     if (classe) n.className = classe;
@@ -453,13 +462,20 @@
       return;
     }
 
+    /* Data decrescente; dentro do mesmo dia vale a ordem do arquivo, então
+     * guardo a posição original para o desempate não depender do motor. */
+    var ordemOriginal = new Map();
+    registros.forEach(function (r, i) {
+      ordemOriginal.set(r, i);
+    });
     registros.sort(function (a, b) {
-      return b.data.localeCompare(a.data);
+      var porData = b.data.localeCompare(a.data);
+      return porData !== 0 ? porData : ordemOriginal.get(a) - ordemOriginal.get(b);
     });
 
     var seletor = document.getElementById("seletor-data");
     registros.forEach(function (r, i) {
-      var opcao = el("option", null, dataLonga(r.data));
+      var opcao = el("option", null, rotuloRegistro(r));
       opcao.value = String(i);
       seletor.appendChild(opcao);
     });
