@@ -5,18 +5,37 @@ TFPM. Sem dependências, sem build: abra o `index.html` no navegador.
 
 ## Para passar o serviço
 
-Use o **`painel-tfpm.html`**: é o painel inteiro num arquivo só, com estilo,
-código e dados embutidos. Abre com duplo clique, sem servidor e sem
-internet, e pode ir por WhatsApp ou e-mail como anexo único.
+Cole os dados do turno na conversa com o Claude e peça a passagem. A skill
+`passagem-turno-tfpm` atualiza o cartão, gera o print e devolve o resumo em
+texto — está em `.claude/skills/passagem-turno-tfpm/`.
 
-Depois de lançar um registro novo, gere-o de novo:
+Na mão, são três passos:
+
+1. Editar o bloco `DADOS DO TURNO` no **`cartao-turno.html`**.
+2. Gerar o print e conferir que ele cabe na tela:
+
+   ```bash
+   node .claude/skills/passagem-turno-tfpm/scripts/gerar-print.mjs \
+     cartao-turno.html /tmp/cartao-turno.png
+   ```
+
+3. Copiar o texto do **`resumo-tfpm.txt`** para o grupo.
+
+O script sai com erro se o cartão não couber — é o que evita mandar print
+cortado, que sai inteiro na sua tela e chega truncado no grupo.
+
+### O painel completo
+
+O **`painel-tfpm.html`** é outra coisa: o painel inteiro (ciclo, TMM, parcial
+de hora em hora) num arquivo só, para consulta. Depois de lançar um registro
+em `dados/registros.js`, gere-o de novo:
 
 ```bash
 node construir.js
 ```
 
-Sem isso o arquivo único continua mostrando os dados antigos — ele é uma
-cópia congelada, não lê o `dados/registros.js` em tempo real.
+Sem isso ele continua mostrando os dados antigos — é uma cópia congelada,
+não lê o `dados/registros.js` em tempo real.
 
 ## Estrutura
 
