@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Controle de Pátio — TFPM</title>
+    <link rel="stylesheet" href="assets/estilo.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <div class="topo-titulo">
+        <p class="migalha">Coordenação de Controle de Pátio · TFPM</p>
+        <h1>Controle de Pátio</h1>
+      </div>
+      <div class="topo-controles">
+        <label for="seletor-data">Data do registro</label>
+        <select id="seletor-data"></select>
+        <p class="envio" id="envio"></p>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="bloco" aria-labelledby="t-patio">
+        <h2 id="t-patio">Ocupação do Pátio</h2>
+        <div class="grade-patio" id="patio"></div>
+      </section>
+
+      <section class="bloco" aria-labelledby="t-indicadores">
+        <h2 id="t-indicadores">Indicadores do Ciclo</h2>
+        <div class="grade-indicadores" id="indicadores"></div>
+      </section>
+
+      <section class="bloco" aria-labelledby="t-descarga">
+        <h2 id="t-descarga">Descarregamento</h2>
+        <div class="grade-numeros" id="descarga-resumo"></div>
+        <div class="cartao">
+          <h3>Parcial do descarregamento</h3>
+          <div class="rolagem">
+            <table id="descarga-parcial"></table>
+          </div>
+          <div id="descarga-grafico" class="grafico"></div>
+        </div>
+        <div class="cartao" id="descarga-impactos"></div>
+      </section>
+
+      <section class="bloco duas-colunas" aria-labelledby="t-tracao">
+        <div>
+          <h2 id="t-tracao">Tração</h2>
+          <div class="grade-numeros" id="tracao"></div>
+        </div>
+        <div>
+          <h2>Partida de Trens</h2>
+          <div class="grade-numeros" id="partidas"></div>
+        </div>
+      </section>
+
+      <section class="bloco" aria-labelledby="t-atencao">
+        <h2 id="t-atencao">Pontos de Atenção</h2>
+        <div class="cartao" id="atencao"></div>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>
+        Dados em <code>dados/registros.js</code>. Página estática, sem
+        dependências externas — abre direto no navegador.
+      </p>
+    </footer>
+
+    <script src="dados/registros.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

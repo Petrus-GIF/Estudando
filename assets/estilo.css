@@ -1,0 +1,457 @@
+:root {
+  --verde: #00a19b;
+  --verde-escuro: #007e7a;
+  --vermelho: #d93025;
+  --fundo: #f2f4f5;
+  --superficie: #ffffff;
+  --borda: #e2e6e8;
+  --texto: #17222b;
+  --texto-fraco: #66757f;
+  --pilula: #eef1f2;
+  --sombra: 0 1px 2px rgba(23, 34, 43, 0.06), 0 4px 12px rgba(23, 34, 43, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --verde: #35c4bd;
+    --verde-escuro: #4dd6ce;
+    --vermelho: #ff7a70;
+    --fundo: #12181c;
+    --superficie: #1a2228;
+    --borda: #2b353d;
+    --texto: #e8edf0;
+    --texto-fraco: #93a3ad;
+    --pilula: #232d34;
+    --sombra: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 3rem;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* ---------- topo ---------- */
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.75rem 0 1.25rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.migalha {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.topo h1 {
+  margin: 0.2rem 0 0;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.topo-controles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+}
+
+.topo-controles label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+}
+
+#seletor-data {
+  padding: 0.4rem 0.7rem;
+  font: inherit;
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+}
+
+.envio {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+/* ---------- blocos ---------- */
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bloco {
+  margin-top: 2rem;
+}
+
+.bloco > h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: var(--verde-escuro);
+}
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.duas-colunas h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: var(--verde-escuro);
+}
+
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 1rem 1.15rem;
+}
+
+.cartao + .cartao {
+  margin-top: 1rem;
+}
+
+.cartao h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+/* ---------- ocupação do pátio ---------- */
+
+.grade-patio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.setor {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--verde);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 0.9rem 1rem 1rem;
+}
+
+.setor.vazio {
+  border-top-color: var(--borda);
+}
+
+.setor-nome {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+.setor-valor {
+  margin: 0.35rem 0 0;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.setor.vazio .setor-valor {
+  color: var(--texto-fraco);
+}
+
+.setor-unidade {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etiquetas li {
+  padding: 0.18rem 0.55rem;
+  background: var(--pilula);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.detalhe {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0.45rem 0 0;
+}
+
+.detalhe div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhe dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--texto-fraco);
+}
+
+.detalhe dd {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- indicadores ---------- */
+
+.grade-indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.indicador {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 1rem 1.15rem 1.1rem;
+}
+
+.indicador > h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  color: var(--verde-escuro);
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.trio .rotulo {
+  display: block;
+  padding: 0.25rem 0;
+  background: var(--pilula);
+  border-radius: 5px;
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+.trio .valor {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.bom {
+  color: var(--verde);
+}
+
+.ruim {
+  color: var(--vermelho);
+}
+
+.parcelas {
+  width: 100%;
+  margin-top: 0.9rem;
+  border-top: 1px dashed var(--borda);
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.parcelas th,
+.parcelas td {
+  padding: 0.4rem 0.3rem;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.parcelas th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+.parcelas th:first-child,
+.parcelas td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* ---------- números genéricos ---------- */
+
+.grade-numeros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.numero {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 0.7rem 0.9rem 0.8rem;
+  text-align: center;
+}
+
+.numero .rotulo {
+  display: block;
+  padding: 0.22rem 0;
+  background: var(--pilula);
+  border-radius: 5px;
+  font-size: 0.73rem;
+  color: var(--texto-fraco);
+}
+
+.numero .valor {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- tabela parcial ---------- */
+
+.rolagem {
+  overflow-x: auto;
+}
+
+#descarga-parcial {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+#descarga-parcial th,
+#descarga-parcial td {
+  padding: 0.45rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.92rem;
+}
+
+#descarga-parcial thead th {
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+#descarga-parcial tbody th {
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- gráfico ---------- */
+
+.grafico {
+  margin-top: 1rem;
+  overflow-x: auto; /* acompanha a tabela em telas estreitas */
+}
+
+.grafico svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
+.legenda {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.legenda span::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 0.4rem;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.legenda .lg-previsto::before {
+  background: var(--texto-fraco);
+}
+
+.legenda .lg-real::before {
+  background: var(--verde);
+}
+
+/* ---------- listas de texto ---------- */
+
+.lista-texto {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.lista-texto li + li {
+  margin-top: 0.35rem;
+}
+
+/* ---------- rodapé ---------- */
+
+.rodape {
+  max-width: 1400px;
+  margin: 2.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borda);
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.rodape code {
+  background: var(--pilula);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
