@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Controle de Pátio — TFPM</title>
+    <style>
+:root {
+  --verde: #00a19b;
+  --verde-escuro: #007e7a;
+  --vermelho: #d93025;
+  --fundo: #f2f4f5;
+  --superficie: #ffffff;
+  --borda: #e2e6e8;
+  --texto: #17222b;
+  --texto-fraco: #66757f;
+  --pilula: #eef1f2;
+  --sombra: 0 1px 2px rgba(23, 34, 43, 0.06), 0 4px 12px rgba(23, 34, 43, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --verde: #35c4bd;
+    --verde-escuro: #4dd6ce;
+    --vermelho: #ff7a70;
+    --fundo: #12181c;
+    --superficie: #1a2228;
+    --borda: #2b353d;
+    --texto: #e8edf0;
+    --texto-fraco: #93a3ad;
+    --pilula: #232d34;
+    --sombra: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* precisa vencer os display:grid/flex das seções ocultas */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 3rem;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* ---------- topo ---------- */
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.75rem 0 1.25rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.migalha {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.topo h1 {
+  margin: 0.2rem 0 0;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.selo {
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  padding: 0.18rem 0.6rem;
+  background: var(--verde);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .selo {
+    color: #10231f;
+  }
+}
+
+.topo-controles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+}
+
+.topo-controles label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+}
+
+#seletor-data {
+  padding: 0.4rem 0.7rem;
+  font: inherit;
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+}
+
+.envio {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+/* ---------- blocos ---------- */
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bloco {
+  margin-top: 2rem;
+}
+
+.bloco > h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: var(--verde-escuro);
+}
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.duas-colunas h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: var(--verde-escuro);
+}
+
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 1rem 1.15rem;
+}
+
+.cartao + .cartao {
+  margin-top: 1rem;
+}
+
+.cartao h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+/* ---------- ocupação do pátio ---------- */
+
+.grade-patio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.setor {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--verde);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 0.9rem 1rem 1rem;
+}
+
+.setor.vazio {
+  border-top-color: var(--borda);
+}
+
+.setor-nome {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+.setor-valor {
+  margin: 0.35rem 0 0;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.setor.vazio .setor-valor {
+  color: var(--texto-fraco);
+}
+
+.setor-unidade {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etiquetas li {
+  padding: 0.18rem 0.55rem;
+  background: var(--pilula);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.detalhe {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0.45rem 0 0;
+}
+
+.detalhe div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhe dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--texto-fraco);
+}
+
+.detalhe dd {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- indicadores ---------- */
+
+.grade-indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.indicador {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 1rem 1.15rem 1.1rem;
+}
+
+.indicador > h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  color: var(--verde-escuro);
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.trio .rotulo {
+  display: block;
+  padding: 0.25rem 0;
+  background: var(--pilula);
+  border-radius: 5px;
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+.trio .valor {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.bom {
+  color: var(--verde);
+}
+
+.ruim {
+  color: var(--vermelho);
+}
+
+.parcelas {
+  width: 100%;
+  margin-top: 0.9rem;
+  border-top: 1px dashed var(--borda);
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.parcelas th,
+.parcelas td {
+  padding: 0.4rem 0.3rem;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.parcelas th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+.parcelas th:first-child,
+.parcelas td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* ---------- números genéricos ---------- */
+
+.grade-numeros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.numero {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  padding: 0.7rem 0.9rem 0.8rem;
+  text-align: center;
+}
+
+.numero .rotulo {
+  display: block;
+  padding: 0.22rem 0;
+  background: var(--pilula);
+  border-radius: 5px;
+  font-size: 0.73rem;
+  color: var(--texto-fraco);
+}
+
+.numero .valor {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.numero .nota {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+/* ---------- tabela parcial ---------- */
+
+.rolagem {
+  overflow-x: auto;
+}
+
+#descarga-parcial {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+#descarga-parcial th,
+#descarga-parcial td {
+  padding: 0.45rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.92rem;
+}
+
+#descarga-parcial thead th {
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+  font-weight: 600;
+}
+
+#descarga-parcial tbody th {
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- gráfico ---------- */
+
+.grafico {
+  margin-top: 1rem;
+  overflow-x: auto; /* acompanha a tabela em telas estreitas */
+}
+
+.grafico svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
+.legenda {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.legenda span::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 0.4rem;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.legenda .lg-previsto::before {
+  background: var(--texto-fraco);
+}
+
+.legenda .lg-real::before {
+  background: var(--verde);
+}
+
+/* ---------- listas de texto ---------- */
+
+.lista-texto {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.lista-texto li + li {
+  margin-top: 0.35rem;
+}
+
+/* ---------- rodapé ---------- */
+
+.rodape {
+  max-width: 1400px;
+  margin: 2.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borda);
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.rodape code {
+  background: var(--pilula);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+</style>
+  </head>
+  <body>
+    <header class="topo">
+      <div class="topo-titulo">
+        <p class="migalha">Coordenação de Controle de Pátio · TFPM</p>
+        <h1>Controle de Pátio</h1>
+        <p class="selo" id="tipo"></p>
+      </div>
+      <div class="topo-controles">
+        <label for="seletor-data">Registro</label>
+        <select id="seletor-data"></select>
+        <p class="envio" id="envio"></p>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="bloco" id="sec-patio" aria-labelledby="t-patio">
+        <h2 id="t-patio">Ocupação do Pátio</h2>
+        <div class="grade-patio" id="patio"></div>
+      </section>
+
+      <section class="bloco" id="sec-indicadores" aria-labelledby="t-indicadores">
+        <h2 id="t-indicadores">Indicadores do Ciclo</h2>
+        <div class="grade-indicadores" id="indicadores"></div>
+      </section>
+
+      <section class="bloco" id="sec-descarga" aria-labelledby="t-descarga">
+        <h2 id="t-descarga">Descarregamento</h2>
+        <div class="grade-numeros" id="descarga-resumo"></div>
+        <div class="cartao" id="card-parcial">
+          <h3>Parcial do descarregamento</h3>
+          <div class="rolagem">
+            <table id="descarga-parcial"></table>
+          </div>
+          <div id="descarga-grafico" class="grafico"></div>
+        </div>
+        <div class="cartao" id="descarga-impactos"></div>
+      </section>
+
+      <section class="bloco duas-colunas" id="sec-tracao" aria-labelledby="t-tracao">
+        <div id="bloco-tracao">
+          <h2 id="t-tracao">Tração</h2>
+          <div class="grade-numeros" id="tracao"></div>
+        </div>
+        <div id="bloco-partidas">
+          <h2>Partida de Trens</h2>
+          <div class="grade-numeros" id="partidas"></div>
+        </div>
+      </section>
+
+      <section class="bloco" id="sec-atencao" aria-labelledby="t-atencao">
+        <h2 id="t-atencao">Pontos de Atenção</h2>
+        <div class="cartao" id="atencao"></div>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>
+        Dados em <code>dados/registros.js</code>. Página estática, sem
+        dependências externas — abre direto no navegador.
+      </p>
+    </footer>
+
+    <script>
+/*
+ * Registros diários de controle de pátio — TFPM.
+ *
+ * Para lançar um novo registro, copie um dos objetos abaixo, ajuste os
+ * valores e acrescente ao início do array. A lista é ordenada por data,
+ * do mais recente para o mais antigo; quando dois registros são do mesmo
+ * dia (um resumo e um report, por exemplo), vale a ordem deste arquivo.
+ *
+ * Dois modelos convivem no mesmo arquivo:
+ *  - "Resumo TFPM"        — o resumo curto do turno;
+ *  - "Report Diário TFPM" — o report completo, com ciclo, TMM e parcial.
+ *
+ * Tudo além de `data`, `tipo` e `patio` é opcional: o que o registro não
+ * tiver simplesmente não aparece no painel, em vez de ficar zerado.
+ *
+ * Convenções:
+ *  - Valores numéricos usam ponto decimal aqui; a formatação pt-BR
+ *    (vírgula) é aplicada na exibição.
+ *  - `null` significa "ainda não apurado" e é exibido como travessão.
+ *  - Em `indicadores`, `melhor` diz qual direção é boa: "menor" ou "maior".
+ */
+
+window.REGISTROS = [
+  {
+    data: "2026-08-04",
+    tipo: "Resumo TFPM",
+    envio: null,
+
+    patio: {
+      recepcao: { lotes: 3 },
+      vvs: { lotes: 7 },
+      classificacao: { lotes: 3 },
+      formacao: { trens: ["M27", "M29"] },
+      ctr: { lotes: 6 },
+      buffer: { gdu: 10, gdt: 20 },
+    },
+
+    descarregamento: {
+      d1: 52.0,
+      oferta: 56.2,
+      ofertado: 33.2,
+      capacidade: 52.0,
+      realizado: 35.0,
+    },
+
+    tracao: {
+      sentido: "A Frente",
+      emDescarga: "M05",
+      emDescargaObs: "D+1",
+      pulmao: 7,
+      liberado: "1M9",
+    },
+
+    partidas: {
+      ultimaPartida: "M25",
+    },
+  },
+
+  {
+    data: "2026-08-04",
+    tipo: "Report Diário TFPM",
+    envio: "18:30",
+
+    patio: {
+      recepcao: { lotes: 0 },
+      vvs: { lotes: 4 },
+      classificacao: { lotes: 2 },
+      formacao: { trens: ["M021", "M023", "1M025"] },
+      ctr: { lotes: 4 },
+      buffer: { gdu: 16, gdt: 28 },
+    },
+
+    indicadores: [
+      {
+        nome: "Ciclo TFPM",
+        programa: 11.87,
+        realizado: 12.46,
+        melhor: "menor",
+        parcelas: [
+          { nome: "Ferrovia", programa: 7.25, realizado: 9.03 },
+          { nome: "Porto", programa: 4.62, realizado: 3.44 },
+        ],
+      },
+      {
+        nome: "TMM — Tempo Médio de Manobra",
+        programa: 0.85,
+        realizado: 1.34,
+        melhor: "menor",
+      },
+      {
+        nome: "Desvios Locos VV → PIAL",
+        programa: 0.32,
+        realizado: 0.61,
+        melhor: "menor",
+      },
+      {
+        nome: "Aguardando Retirada de Locos PIAL",
+        rotuloPrograma: "Desafio",
+        programa: 0.33,
+        realizado: 0.25,
+        melhor: "menor",
+      },
+    ],
+
+    descarregamento: {
+      d30: 40.0,
+      sx: 40.0,
+      d1: 39.0,
+      oferta: 40.16,
+      ofertado: 31.16,
+      capacidade: 40.16,
+      realizado: 30.0,
+      trens: ["M106", "M102"],
+      parcial: {
+        horas: ["03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00", "24:00"],
+        previsto: [5.0, 15.0, 19.0, 23.0, 27.0, 31.0, 35.58, 40.16],
+        descarregado: [7.5, 15.0, 19.0, 22.0, 25.5, 30.0, null, null],
+      },
+      impactos: [
+        "12h — Segregação SSCJ para B178 / VV8 — Vagões aplicados;",
+        "15h — Segregação SSCJ para B178;",
+        "18h — Segregação SFHJ para O090 e FCSS para C123 / VV8 — Vagões aplicados.",
+      ],
+    },
+
+    tracao: {
+      sentido: "A Frente",
+      emDescarga: "2M003",
+      pulmao: 7,
+      liberado: "M007",
+    },
+
+    partidas: {
+      programaD: "M027",
+      minaD1: "M011",
+      ultimaPartida: "M019",
+    },
+
+    atencao: [
+      "TMM acima do programa devido manobra com ociosidade;",
+      "Desvios Locos no PIAL acima devido tempo de M.I. por baixo do PIAL;",
+      "Ciclo ferrovia acima devido reflexo de lotes CTR (eixo).",
+    ],
+  },
+];
+</script>
+    <script>
+/* Renderiza o registro diário de controle de pátio a partir de window.REGISTROS.
+ *
+ * Um registro pode vir no modelo curto ("Resumo TFPM") ou no completo
+ * ("Report Diário TFPM"). Tudo além da ocupação do pátio é opcional: a seção
+ * some quando o registro não traz o dado, em vez de aparecer zerada. */
+
+(function () {
+  "use strict";
+
+  var registros = (window.REGISTROS || []).slice();
+  var TRAVESSAO = "—";
+
+  /* ---------- utilidades ---------- */
+
+  function num(valor, casas) {
+    if (valor === null || valor === undefined || valor === "") return TRAVESSAO;
+    return Number(valor).toLocaleString("pt-BR", {
+      minimumFractionDigits: casas === undefined ? 2 : casas,
+      maximumFractionDigits: casas === undefined ? 2 : casas,
+    });
+  }
+
+  function comSinal(valor, casas) {
+    if (valor === null || valor === undefined) return TRAVESSAO;
+    var texto = num(Math.abs(valor), casas);
+    if (Math.abs(valor) < 0.005) return num(0, casas);
+    return (valor > 0 ? "+" : "-") + texto;
+  }
+
+  function dataLonga(iso) {
+    var p = iso.split("-");
+    return p[2] + "/" + p[1] + "/" + p[0];
+  }
+
+  /* Um mesmo dia pode ter resumo e report, então o rótulo carrega o modelo
+   * e o horário para os dois não ficarem indistinguíveis na lista. */
+  function rotuloRegistro(r) {
+    var partes = [dataLonga(r.data)];
+    if (r.tipo) partes.push(r.tipo);
+    if (r.envio) partes.push(r.envio);
+    return partes.join(" · ");
+  }
+
+  function el(tag, classe, texto) {
+    var n = document.createElement(tag);
+    if (classe) n.className = classe;
+    if (texto !== undefined && texto !== null) n.textContent = texto;
+    return n;
+  }
+
+  function limpar(no) {
+    while (no.firstChild) no.removeChild(no.firstChild);
+  }
+
+  function mostrar(id, visivel) {
+    document.getElementById(id).hidden = !visivel;
+  }
+
+  function preenchido(valor) {
+    return valor !== null && valor !== undefined && valor !== "";
+  }
+
+  /* Classe de cor do saldo: depende de qual direção é boa para o indicador. */
+  function classeSaldo(saldo, melhor) {
+    if (Math.abs(saldo) < 0.005) return "";
+    var favoravel = melhor === "maior" ? saldo > 0 : saldo < 0;
+    return favoravel ? "bom" : "ruim";
+  }
+
+  function cartaoNumero(rotulo, valor, classe, nota) {
+    var no = el("div", "numero");
+    no.appendChild(el("span", "rotulo", rotulo));
+    no.appendChild(el("span", "valor" + (classe ? " " + classe : ""), valor));
+    if (nota) no.appendChild(el("span", "nota", nota));
+    return no;
+  }
+
+  function plural(n, singular, plural_) {
+    return n === 1 ? singular : plural_;
+  }
+
+  /* ---------- ocupação do pátio ---------- */
+
+  function renderPatio(patio) {
+    var alvo = document.getElementById("patio");
+    limpar(alvo);
+
+    function setor(nome, valor, unidade, extras) {
+      var no = el("div", "setor" + (valor === 0 ? " vazio" : ""));
+      no.appendChild(el("p", "setor-nome", nome));
+      no.appendChild(el("p", "setor-valor", String(valor).padStart(2, "0")));
+      if (unidade) no.appendChild(el("p", "setor-unidade", unidade));
+      if (extras) no.appendChild(extras);
+      alvo.appendChild(no);
+    }
+
+    setor("Recepção", patio.recepcao.lotes, plural(patio.recepcao.lotes, "lote", "lotes"));
+    setor("VVs", patio.vvs.lotes, plural(patio.vvs.lotes, "lote", "lotes"));
+    setor(
+      "Classificação",
+      patio.classificacao.lotes,
+      plural(patio.classificacao.lotes, "lote", "lotes")
+    );
+
+    var trens = patio.formacao.trens || [];
+    var lista = el("ul", "etiquetas");
+    trens.forEach(function (t) {
+      lista.appendChild(el("li", null, t));
+    });
+    setor("Formação", trens.length, plural(trens.length, "trem", "trens"), lista);
+
+    setor("CTR", patio.ctr.lotes, plural(patio.ctr.lotes, "lote", "lotes"));
+
+    var buffer = patio.buffer;
+    var detalhe = el("dl", "detalhe");
+    [
+      ["GDU", buffer.gdu],
+      ["GDT", buffer.gdt],
+    ].forEach(function (par) {
+      var caixa = el("div");
+      caixa.appendChild(el("dt", null, par[0]));
+      caixa.appendChild(el("dd", null, String(par[1])));
+      detalhe.appendChild(caixa);
+    });
+    setor("Buffer", buffer.gdu + buffer.gdt, "vagões no total", detalhe);
+  }
+
+  /* ---------- indicadores ---------- */
+
+  function renderIndicadores(indicadores) {
+    var alvo = document.getElementById("indicadores");
+    limpar(alvo);
+
+    if (!indicadores || !indicadores.length) {
+      mostrar("sec-indicadores", false);
+      return;
+    }
+    mostrar("sec-indicadores", true);
+
+    indicadores.forEach(function (ind) {
+      var saldo = ind.realizado - ind.programa;
+      var no = el("div", "indicador");
+      no.appendChild(el("h3", null, ind.nome));
+
+      var trio = el("div", "trio");
+      [
+        [ind.rotuloPrograma || "Programa", num(ind.programa), ""],
+        ["Realizado", num(ind.realizado), classeSaldo(saldo, ind.melhor)],
+        ["Saldo", comSinal(saldo), classeSaldo(saldo, ind.melhor)],
+      ].forEach(function (col) {
+        var caixa = el("div");
+        caixa.appendChild(el("span", "rotulo", col[0]));
+        caixa.appendChild(el("span", "valor" + (col[2] ? " " + col[2] : ""), col[1]));
+        trio.appendChild(caixa);
+      });
+      no.appendChild(trio);
+
+      if (ind.parcelas && ind.parcelas.length) {
+        var tabela = el("table", "parcelas");
+        var thead = el("thead");
+        var linha = el("tr");
+        ["Parcelas", "Programa", "Realizado", "Saldo"].forEach(function (t) {
+          linha.appendChild(el("th", null, t));
+        });
+        thead.appendChild(linha);
+        tabela.appendChild(thead);
+
+        var tbody = el("tbody");
+        ind.parcelas.forEach(function (p) {
+          var s = p.realizado - p.programa;
+          var tr = el("tr");
+          tr.appendChild(el("td", null, p.nome));
+          tr.appendChild(el("td", null, num(p.programa)));
+          tr.appendChild(el("td", classeSaldo(s, ind.melhor), num(p.realizado)));
+          tr.appendChild(el("td", classeSaldo(s, ind.melhor), comSinal(s)));
+          tbody.appendChild(tr);
+        });
+        tabela.appendChild(tbody);
+        no.appendChild(tabela);
+      }
+
+      alvo.appendChild(no);
+    });
+  }
+
+  /* ---------- descarregamento ---------- */
+
+  function renderDescarregamento(d) {
+    if (!d) {
+      mostrar("sec-descarga", false);
+      return;
+    }
+    mostrar("sec-descarga", true);
+
+    var resumo = document.getElementById("descarga-resumo");
+    limpar(resumo);
+
+    var aderencia = d.realizado - d.capacidade;
+    [
+      ["D+30", "d30", ""],
+      ["S+X", "sx", ""],
+      ["D+1", "d1", ""],
+      ["Oferta", "oferta", "bom"],
+      ["Ofertado", "ofertado", ""],
+      ["Capacidade", "capacidade", "bom"],
+      ["Realizado", "realizado", classeSaldo(aderencia, "maior")],
+    ].forEach(function (c) {
+      if (!preenchido(d[c[1]])) return;
+      resumo.appendChild(cartaoNumero(c[0], num(d[c[1]]), c[2]));
+    });
+
+    if (d.trens && d.trens.length) {
+      var no = el("div", "numero");
+      no.appendChild(el("span", "rotulo", "Trens"));
+      var lista = el("ul", "etiquetas");
+      d.trens.forEach(function (t) {
+        lista.appendChild(el("li", null, t));
+      });
+      no.appendChild(lista);
+      resumo.appendChild(no);
+    }
+
+    var temParcial = !!(d.parcial && d.parcial.horas && d.parcial.horas.length);
+    mostrar("card-parcial", temParcial);
+    if (temParcial) {
+      renderParcial(d.parcial);
+      renderGrafico(d.parcial);
+    }
+
+    var impactos = document.getElementById("descarga-impactos");
+    limpar(impactos);
+    if (d.impactos && d.impactos.length) {
+      mostrar("descarga-impactos", true);
+      impactos.appendChild(el("h3", null, "Impactos no descarregamento"));
+      impactos.appendChild(listaTexto(d.impactos));
+    } else {
+      mostrar("descarga-impactos", false);
+    }
+  }
+
+  function renderParcial(parcial) {
+    var tabela = document.getElementById("descarga-parcial");
+    limpar(tabela);
+
+    var thead = el("thead");
+    var cabecalho = el("tr");
+    cabecalho.appendChild(el("th", null, ""));
+    parcial.horas.forEach(function (h) {
+      cabecalho.appendChild(el("th", null, h));
+    });
+    thead.appendChild(cabecalho);
+    tabela.appendChild(thead);
+
+    var tbody = el("tbody");
+
+    var linhaPrevisto = el("tr");
+    linhaPrevisto.appendChild(el("th", null, "Previsto"));
+    parcial.previsto.forEach(function (v) {
+      linhaPrevisto.appendChild(el("td", null, num(v)));
+    });
+    tbody.appendChild(linhaPrevisto);
+
+    var linhaReal = el("tr");
+    linhaReal.appendChild(el("th", null, "Descarregado"));
+    parcial.descarregado.forEach(function (v, i) {
+      if (!preenchido(v)) {
+        linhaReal.appendChild(el("td", null, TRAVESSAO));
+        return;
+      }
+      var desvio = v - parcial.previsto[i];
+      linhaReal.appendChild(el("td", classeSaldo(desvio, "maior"), num(v)));
+    });
+    tbody.appendChild(linhaReal);
+
+    tabela.appendChild(tbody);
+  }
+
+  function renderGrafico(parcial) {
+    var alvo = document.getElementById("descarga-grafico");
+    limpar(alvo);
+
+    var L = 46, R = 34, T = 12, B = 28; /* R folga para o rótulo das 24:00 */
+    var W = 800, H = 260;
+    var largura = W - L - R;
+    var altura = H - T - B;
+
+    var todos = parcial.previsto.concat(parcial.descarregado).filter(function (v) {
+      return typeof v === "number";
+    });
+    var maximo = Math.ceil(Math.max.apply(null, todos) / 10) * 10;
+    var n = parcial.horas.length;
+
+    function x(i) {
+      return L + (n === 1 ? largura / 2 : (largura * i) / (n - 1));
+    }
+    function y(v) {
+      return T + altura - (altura * v) / maximo;
+    }
+
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("role", "img");
+    svg.setAttribute(
+      "aria-label",
+      "Curva de descarregamento previsto contra realizado ao longo do dia"
+    );
+
+    function svgEl(tag, atributos) {
+      var no = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      Object.keys(atributos).forEach(function (k) {
+        no.setAttribute(k, atributos[k]);
+      });
+      return no;
+    }
+
+    var corFraca = "currentColor";
+
+    /* grade horizontal + rótulos do eixo Y, em passos redondos */
+    var passo = Math.max(10, Math.ceil(maximo / 8 / 10) * 10);
+    for (var marca = 0; marca * passo <= maximo; marca++) {
+      var v = marca * passo;
+      svg.appendChild(
+        svgEl("line", {
+          x1: L, y1: y(v), x2: W - R, y2: y(v),
+          stroke: corFraca, "stroke-opacity": v === 0 ? 0.35 : 0.12,
+        })
+      );
+      var rotulo = svgEl("text", {
+        x: L - 8, y: y(v) + 4, "text-anchor": "end",
+        "font-size": 11, fill: corFraca, "fill-opacity": 0.6,
+      });
+      rotulo.textContent = num(v, 0);
+      svg.appendChild(rotulo);
+    }
+
+    /* rótulos do eixo X */
+    parcial.horas.forEach(function (h, i) {
+      var t = svgEl("text", {
+        x: x(i), y: H - 8, "text-anchor": "middle",
+        "font-size": 11, fill: corFraca, "fill-opacity": 0.6,
+      });
+      t.textContent = h;
+      svg.appendChild(t);
+    });
+
+    function serie(valores, cor, tracejado) {
+      var pontos = [];
+      for (var i = 0; i < valores.length; i++) {
+        if (typeof valores[i] !== "number") break; // interrompe onde ainda não há apuração
+        pontos.push(x(i) + "," + y(valores[i]));
+      }
+      if (!pontos.length) return;
+
+      svg.appendChild(
+        svgEl("polyline", {
+          points: pontos.join(" "),
+          fill: "none",
+          stroke: cor,
+          "stroke-width": 2,
+          "stroke-linejoin": "round",
+          "stroke-linecap": "round",
+          "stroke-dasharray": tracejado ? "5 4" : "none",
+        })
+      );
+
+      pontos.forEach(function (p) {
+        var xy = p.split(",");
+        svg.appendChild(svgEl("circle", { cx: xy[0], cy: xy[1], r: 3.5, fill: cor }));
+      });
+    }
+
+    var estilo = getComputedStyle(document.documentElement);
+    var verde = estilo.getPropertyValue("--verde").trim() || "#00a19b";
+    var cinza = estilo.getPropertyValue("--texto-fraco").trim() || "#66757f";
+
+    serie(parcial.previsto, cinza, true);
+    serie(parcial.descarregado, verde, false);
+
+    alvo.appendChild(svg);
+
+    var legenda = el("div", "legenda");
+    legenda.appendChild(el("span", "lg-previsto", "Previsto"));
+    legenda.appendChild(el("span", "lg-real", "Descarregado"));
+    alvo.appendChild(legenda);
+  }
+
+  /* ---------- tração e partidas ---------- */
+
+  function renderTracaoEPartidas(t, p) {
+    var temTracao = preencherCartoes("tracao", [
+      ["Sentido", t && t.sentido, ""],
+      ["Em descarga", t && t.emDescarga, "", t && t.emDescargaObs],
+      ["Pulmão", t && preenchido(t.pulmao) ? t.pulmao + " " + plural(t.pulmao, "loco", "locos") : null, ""],
+      ["Tração liberada", t && t.liberado, "bom"],
+    ]);
+    var temPartidas = preencherCartoes("partidas", [
+      ["Programa D", p && p.programaD, ""],
+      ["Mina D+1", p && p.minaD1, ""],
+      ["Última partida", p && p.ultimaPartida, "bom"],
+    ]);
+
+    mostrar("bloco-tracao", temTracao);
+    mostrar("bloco-partidas", temPartidas);
+    mostrar("sec-tracao", temTracao || temPartidas);
+  }
+
+  function preencherCartoes(id, campos) {
+    var alvo = document.getElementById(id);
+    limpar(alvo);
+    var algum = false;
+    campos.forEach(function (c) {
+      if (!preenchido(c[1])) return;
+      algum = true;
+      alvo.appendChild(cartaoNumero(c[0], String(c[1]), c[2], c[3]));
+    });
+    return algum;
+  }
+
+  /* ---------- textos ---------- */
+
+  function listaTexto(itens) {
+    var ul = el("ul", "lista-texto");
+    itens.forEach(function (i) {
+      ul.appendChild(el("li", null, i));
+    });
+    return ul;
+  }
+
+  function renderAtencao(itens) {
+    if (!itens || !itens.length) {
+      mostrar("sec-atencao", false);
+      return;
+    }
+    mostrar("sec-atencao", true);
+    var alvo = document.getElementById("atencao");
+    limpar(alvo);
+    alvo.appendChild(listaTexto(itens));
+  }
+
+  /* ---------- orquestração ---------- */
+
+  function render(registro) {
+    var selo = document.getElementById("tipo");
+    selo.textContent = registro.tipo || "";
+    selo.hidden = !registro.tipo;
+
+    document.getElementById("envio").textContent = registro.envio
+      ? "Envio: " + dataLonga(registro.data) + " " + registro.envio
+      : "Horário de envio não informado";
+
+    renderPatio(registro.patio);
+    renderIndicadores(registro.indicadores);
+    renderDescarregamento(registro.descarregamento);
+    renderTracaoEPartidas(registro.tracao, registro.partidas);
+    renderAtencao(registro.atencao);
+  }
+
+  function iniciar() {
+    if (!registros.length) {
+      document.getElementById("conteudo").textContent =
+        "Nenhum registro em dados/registros.js.";
+      return;
+    }
+
+    /* Data decrescente; dentro do mesmo dia vale a ordem do arquivo, então
+     * guardo a posição original para o desempate não depender do motor. */
+    var ordemOriginal = new Map();
+    registros.forEach(function (r, i) {
+      ordemOriginal.set(r, i);
+    });
+    registros.sort(function (a, b) {
+      var porData = b.data.localeCompare(a.data);
+      return porData !== 0 ? porData : ordemOriginal.get(a) - ordemOriginal.get(b);
+    });
+
+    var seletor = document.getElementById("seletor-data");
+    registros.forEach(function (r, i) {
+      var opcao = el("option", null, rotuloRegistro(r));
+      opcao.value = String(i);
+      seletor.appendChild(opcao);
+    });
+    seletor.addEventListener("change", function () {
+      render(registros[Number(seletor.value)]);
+    });
+
+    render(registros[0]);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciar);
+  } else {
+    iniciar();
+  }
+})();
+</script>
+  </body>
+</html>

@@ -3,6 +3,21 @@
 Painel estático para acompanhar a ocupação do pátio e os indicadores do
 TFPM. Sem dependências, sem build: abra o `index.html` no navegador.
 
+## Para passar o serviço
+
+Use o **`painel-tfpm.html`**: é o painel inteiro num arquivo só, com estilo,
+código e dados embutidos. Abre com duplo clique, sem servidor e sem
+internet, e pode ir por WhatsApp ou e-mail como anexo único.
+
+Depois de lançar um registro novo, gere-o de novo:
+
+```bash
+node construir.js
+```
+
+Sem isso o arquivo único continua mostrando os dados antigos — ele é uma
+cópia congelada, não lê o `dados/registros.js` em tempo real.
+
 ## Estrutura
 
 ```
@@ -10,6 +25,8 @@ index.html            layout do painel
 assets/estilo.css     estilos (claro e escuro)
 assets/app.js         renderização a partir dos dados
 dados/registros.js    um objeto por dia apurado
+construir.js          junta tudo em painel-tfpm.html
+painel-tfpm.html      arquivo único, gerado — é o que se manda para o turno
 ```
 
 A apresentação está separada dos dados de propósito: para lançar um novo
