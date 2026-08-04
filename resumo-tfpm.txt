@@ -1,17 +1,17 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 52.00
-Oferta: 56.20
-Ofertado: 33.20
-Capacidade: 52.00
-Realizado: 35
-Última partida: M25
-Tração A Frente: (M05 em descarga D+1 /// Tração: 1M9)
+D+1: 39.00
+Oferta: 40.16
+Ofertado: 31.16
+Capacidade: 40.16
+Realizado: 30
+Última partida: M019
+Tração A Frente: (2M003 em descarga D+1 /// Tração: M007)
 07 loco no Pulmão
 
-Recepção: 03
-VVs: 07 lotes
-Classificação: 03
-Formação: M27 / M29
-CTR: 06
+Recepção: 00
+VVs: 04 lotes
+Classificação: 02
+Formação: M021 / M023 / 1M025
+CTR: 04
 Buffer:
-10 GDUs + 20 GDTs
+16 GDUs + 28 GDTs
