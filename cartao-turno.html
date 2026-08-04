@@ -230,6 +230,50 @@
 
       .buffer b { font-weight: 700; font-variant-numeric: tabular-nums; }
 
+      /* Com observação o cartão fica apertado: a faixa toma altura fixa e o
+         resto tem que caber no que sobra. Estes ajustes recuperam o espaço
+         sem mudar o cartão do turno tranquilo, que é o caso comum. */
+      .tem-obs .faixa { padding-top: 8px; padding-bottom: 8px; }
+      .tem-obs .faixa h2 { margin-bottom: 6px; }
+      .tem-obs .destaque .valor { font-size: 40px; }
+      .tem-obs .destaque { margin-bottom: 6px; }
+      .tem-obs .patio .v { font-size: 23px; }
+      .tem-obs .patio .cel { padding: 6px 2px; }
+      .tem-obs .item .v { font-size: 20px; }
+      .tem-obs .item .v.texto { font-size: 18px; }
+      .tem-obs .grade { gap: 7px 8px; }
+      .tem-obs .linha { margin-top: 7px; }
+
+      /* Só aparece quando o turno teve complicação. Fica fora do fluxo das
+         faixas (sem flex: 1) para tomar a altura que precisa e comprimir o
+         resto, que é o que tem folga. */
+      .obs {
+        flex: none;
+        padding: 9px 14px 10px;
+        border-top: 1px solid #e2e6e8;
+        border-left: 4px solid var(--vale-amarelo);
+        background: #fff8e6;
+      }
+
+      .obs h3 {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #8a6d1a;
+        margin-bottom: 4px;
+      }
+
+      .obs ul {
+        margin: 0;
+        padding-left: 15px;
+        font-size: 13px;
+        line-height: 1.35;
+        color: #4a3d1c;
+      }
+
+      .obs li + li { margin-top: 3px; }
+
       /* identifica a passagem, então pesa mais que uma assinatura de rodapé */
       .rodape {
         display: flex;
@@ -306,6 +350,11 @@
         </div>
       </div>
 
+      <div class="obs" id="obs" hidden>
+        <h3>Observações do turno</h3>
+        <ul id="obs-lista"></ul>
+      </div>
+
       <div class="rodape">
         <span id="rodape"></span>
         <img src="data:image/png;base64,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" alt="Vale" />
@@ -343,6 +392,9 @@
         liberado: "M007",
         pulmao: 7,
         ultimaPartida: "M019",
+
+        // complicações do turno; deixe [] quando não houver nada a registrar
+        observacoes: [],
 
         // rodapé: trocar as turmas a cada passagem
         passagem: "Passagem de serviço turma A - C",
@@ -407,6 +459,18 @@
       texto("liberado", TURNO.liberado);
       texto("pulmao", dois(TURNO.pulmao));
       texto("ultima", TURNO.ultimaPartida);
+
+      var obs = TURNO.observacoes || [];
+      if (obs.length) {
+        var lista = document.getElementById("obs-lista");
+        obs.forEach(function (o) {
+          var li = document.createElement("li");
+          li.textContent = o;
+          lista.appendChild(li);
+        });
+        document.getElementById("obs").hidden = false;
+        document.querySelector(".cartao").classList.add("tem-obs");
+      }
 
       texto("rodape", TURNO.passagem);
     </script>

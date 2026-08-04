@@ -82,6 +82,7 @@ Os rótulos do sistema e os do cartão não têm o mesmo nome. Este é o mapa:
 | Pulmão | `pulmao` |
 | Última partida | `ultimaPartida` |
 | Tração A Frente / Atrás | `sentido` |
+| Impactos no Descarregamento · Pontos de Atenção · complicações contadas em texto | `observacoes` — lista |
 | turmas que estão passando o serviço | `passagem` |
 
 Três detalhes que já geraram erro:
@@ -102,6 +103,34 @@ apuração, não a data em que você está mexendo no arquivo.
 O `passagem` é o rodapé — "Passagem de serviço turma A - C". As turmas mudam a
 cada troca, então confirme com o usuário se ele não disser quais são; herdar a
 do turno anterior manda o grupo uma informação errada assinada como certa.
+
+### Quando o turno teve complicação
+
+Tudo que o usuário contar fora dos números vai para `observacoes`, uma lista de
+frases curtas: segregação, locomotiva com falha, descarga parada, desvio
+interditado, atraso na formação. No report do sistema, esse conteúdo aparece em
+"Impactos no Descarregamento" e "Pontos de Atenção" — aproveite os dois.
+
+```js
+observacoes: [
+  "12h — Segregação SSCJ para B178 / VV8, vagões aplicados;",
+  "15h — Locomotiva 2M003 com falha, tração remanejada;",
+],
+```
+
+Com a lista preenchida, uma faixa amarela aparece acima do rodapé e o cartão se
+comprime sozinho para caber. Com `observacoes: []` ela some e o cartão volta ao
+formato do turno tranquilo.
+
+**Registre a complicação no cartão, não só no texto.** O que circula no grupo é
+o print; uma ocorrência que só existe no texto passa batida por quem olhar a
+imagem — que é a maioria.
+
+**Cabem três linhas.** Na tela de 375px, a quarta observação já estoura. Se o
+turno rendeu mais que isso, junte o que for do mesmo assunto e encurte para o
+essencial — hora, o que houve, o que foi feito. O texto do resumo não tem esse
+limite e pode carregar o relato completo; use isso a favor: cartão com o que
+não pode passar batido, texto com o detalhe.
 
 ## Passo 4 — atualizar o texto
 
@@ -129,6 +158,16 @@ Buffer:
 ```
 
 Os asteriscos em volta de "Resumo TFPM" são negrito no WhatsApp — mantenha.
+
+Havendo observações, acrescente no fim, com o mesmo negrito:
+
+```
+*Observações:*
+- 12h — Segregação SSCJ para B178 / VV8, vagões aplicados;
+- 15h — Locomotiva 2M003 com falha, tração remanejada.
+```
+
+Aqui pode entrar o relato inteiro, inclusive o que não coube no cartão.
 
 ## Passo 5 — gerar o print e conferir
 
