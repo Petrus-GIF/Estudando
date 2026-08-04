@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resumo TFPM — cartão do turno</title>
+    <style>
+      /* Cartão do turno: cabe inteiro numa tela de celular, sem rolar.
+         Abrir no celular, tirar o print e mandar no grupo. */
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        display: flex;
+        justify-content: center;
+        background: #e8ebed;
+        color: #17222b;
+        font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+        padding: 8px;
+        /* tema fixo: o print sai igual em qualquer celular, claro ou escuro */
+        color-scheme: light;
+      }
+
+      /* O cartão ocupa a tela toda para o print não sair com sobra vazia.
+         dvh acompanha a barra do navegador do celular, que aparece e some. */
+      .cartao {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 390px;
+        min-height: calc(100vh - 16px);
+        min-height: calc(100dvh - 16px);
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(23, 34, 43, 0.15);
+      }
+
+      /* ---- cabeçalho ---- */
+
+      .cabecalho {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 13px 16px;
+        background: #007e7a;
+        color: #fff;
+      }
+
+      /* acompanha a largura: em tela pequena encolhe em vez de quebrar linha */
+      .cabecalho h1 {
+        font-size: clamp(15px, 4.5vw, 19px);
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+
+      .cabecalho .quando {
+        font-size: clamp(11px, 3.3vw, 14px);
+        opacity: 0.85;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ---- faixas ---- */
+
+      /* as três faixas dividem a altura que sobra, em partes iguais */
+      .faixa {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px 14px;
+        border-top: 1px solid #e2e6e8;
+      }
+      .faixa:first-of-type { border-top: none; }
+
+      .faixa h2 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #7d8b94;
+        margin-bottom: 9px;
+      }
+
+      /* ---- destaque do realizado ---- */
+
+      .destaque {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .destaque .valor {
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        color: #17222b;
+      }
+
+      .destaque .de {
+        display: flex;
+        flex-direction: column;
+        font-size: 17px;
+        color: #66757f;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .destaque .de b { color: #17222b; font-weight: 600; }
+
+      .destaque .de small {
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #94a2aa;
+      }
+
+      /* barra de aderência à capacidade */
+      .barra {
+        height: 8px;
+        background: #e2e6e8;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 8px;
+      }
+      .barra i { display: block; height: 100%; background: #00a19b; border-radius: 3px; }
+
+      /* ---- grades de valores ---- */
+
+      .grade {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px 8px;
+      }
+
+      .grade.tres { grid-template-columns: repeat(3, 1fr); }
+
+      .item .r {
+        display: block;
+        font-size: 10.5px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #7d8b94;
+        white-space: nowrap;
+      }
+
+      .item .v {
+        display: block;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 1.25;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .item .v.texto { font-size: 20px; }
+
+      /* ---- pátio ---- */
+
+      .patio {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+        text-align: center;
+      }
+
+      .patio .cel {
+        padding: 9px 2px;
+        background: #f2f4f5;
+        border-radius: 7px;
+      }
+
+      .patio .cel.zero { opacity: 0.55; }
+
+      .patio .r {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #7d8b94;
+      }
+
+      .patio .v {
+        display: block;
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 1.2;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .linha {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-top: 10px;
+        font-size: 17px;
+      }
+
+      .linha .r {
+        font-size: 11.5px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #7d8b94;
+      }
+
+      .pilulas { display: flex; flex-wrap: wrap; gap: 4px; }
+
+      .pilulas b {
+        padding: 3px 9px;
+        background: #f2f4f5;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .buffer b { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+      .rodape {
+        padding: 9px 14px 11px;
+        border-top: 1px solid #e2e6e8;
+        font-size: 11px;
+        color: #94a2aa;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cartao">
+      <div class="cabecalho">
+        <h1>🚂 RESUMO TFPM</h1>
+        <span class="quando" id="quando"></span>
+      </div>
+
+      <div class="faixa">
+        <h2>Descarregamento</h2>
+        <div class="destaque">
+          <span class="valor" id="realizado"></span>
+          <span class="de"
+            ><span>de <b id="capacidade"></b></span><small>capacidade</small></span
+          >
+        </div>
+        <div class="barra"><i id="barra"></i></div>
+        <div class="grade tres">
+          <span class="item"><span class="r">D+1</span><span class="v" id="d1"></span></span>
+          <span class="item"><span class="r">Oferta</span><span class="v" id="oferta"></span></span>
+          <span class="item"><span class="r">Ofertado</span><span class="v" id="ofertado"></span></span>
+        </div>
+      </div>
+
+      <div class="faixa">
+        <h2>Pátio</h2>
+        <div class="patio" id="patio"></div>
+        <div class="linha">
+          <span class="r">Formação</span>
+          <span class="pilulas" id="formacao"></span>
+        </div>
+        <div class="linha buffer">
+          <span class="r">Buffer</span>
+          <span id="buffer"></span>
+        </div>
+      </div>
+
+      <div class="faixa">
+        <h2 id="titulo-tracao">Tração</h2>
+        <div class="grade">
+          <span class="item"
+            ><span class="r">Em descarga</span><span class="v texto" id="emDescarga"></span
+          ></span>
+          <span class="item"
+            ><span class="r">Tração</span><span class="v texto" id="liberado"></span
+          ></span>
+          <span class="item"><span class="r">Pulmão</span><span class="v" id="pulmao"></span></span>
+          <span class="item"
+            ><span class="r">Últ. partida</span><span class="v texto" id="ultima"></span
+          ></span>
+        </div>
+      </div>
+
+      <div class="rodape" id="rodape"></div>
+    </div>
+
+    <script>
+      /* =======================================================
+         DADOS DO TURNO — é só editar daqui até o "fim dos dados"
+         ======================================================= */
+
+      var TURNO = {
+        data: "04/08/2026",
+        hora: "18:30",
+
+        // descarregamento
+        d1: 39.0,
+        oferta: 40.16,
+        ofertado: 31.16,
+        capacidade: 40.16,
+        realizado: 30.0,
+
+        // pátio
+        recepcao: 0,
+        vvs: 4,
+        classificacao: 2,
+        ctr: 4,
+        formacao: ["M021", "M023", "1M025"],
+        gdu: 16,
+        gdt: 28,
+
+        // tração
+        sentido: "A Frente",
+        emDescarga: "2M003",
+        liberado: "M007",
+        pulmao: 7,
+        ultimaPartida: "M019",
+      };
+
+      /* ================== fim dos dados ================== */
+
+      function n(v, casas) {
+        return Number(v).toLocaleString("pt-BR", {
+          minimumFractionDigits: casas === undefined ? 2 : casas,
+          maximumFractionDigits: casas === undefined ? 2 : casas,
+        });
+      }
+
+      function dois(v) {
+        return String(v).padStart(2, "0");
+      }
+
+      function texto(id, valor) {
+        document.getElementById(id).textContent = valor;
+      }
+
+      texto("quando", TURNO.data + " · " + TURNO.hora);
+
+      texto("realizado", n(TURNO.realizado));
+      texto("capacidade", n(TURNO.capacidade));
+      texto("d1", n(TURNO.d1));
+      texto("oferta", n(TURNO.oferta));
+      texto("ofertado", n(TURNO.ofertado));
+
+      var aderencia = Math.max(0, Math.min(1, TURNO.realizado / TURNO.capacidade));
+      document.getElementById("barra").style.width = (aderencia * 100).toFixed(1) + "%";
+
+      var patio = document.getElementById("patio");
+      [
+        ["Recep.", TURNO.recepcao],
+        ["VVs", TURNO.vvs],
+        ["Class.", TURNO.classificacao],
+        ["Form.", TURNO.formacao.length],
+        ["CTR", TURNO.ctr],
+      ].forEach(function (par) {
+        var cel = document.createElement("span");
+        cel.className = "cel" + (par[1] === 0 ? " zero" : "");
+        cel.innerHTML =
+          '<span class="r"></span><span class="v"></span>';
+        cel.querySelector(".r").textContent = par[0];
+        cel.querySelector(".v").textContent = dois(par[1]);
+        patio.appendChild(cel);
+      });
+
+      var formacao = document.getElementById("formacao");
+      TURNO.formacao.forEach(function (t) {
+        var b = document.createElement("b");
+        b.textContent = t;
+        formacao.appendChild(b);
+      });
+
+      texto("buffer", TURNO.gdu + " GDUs + " + TURNO.gdt + " GDTs");
+
+      texto("titulo-tracao", "Tração " + TURNO.sentido);
+      texto("emDescarga", TURNO.emDescarga);
+      texto("liberado", TURNO.liberado);
+      texto("pulmao", dois(TURNO.pulmao));
+      texto("ultima", TURNO.ultimaPartida);
+
+      texto("rodape", "Coordenação de Controle de Pátio · TFPM");
+    </script>
+  </body>
+</html>
