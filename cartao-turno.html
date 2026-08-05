@@ -367,37 +367,44 @@
          ======================================================= */
 
       var TURNO = {
-        data: "04/08/2026",
-        hora: "18:30",
+        data: "05/08/2026",
+        hora: "18:22",
 
         // descarregamento
-        d1: 39.0,
-        oferta: 40.16,
-        ofertado: 31.16,
-        capacidade: 40.16,
-        realizado: 30.0,
+        d1: 45.0,
+        oferta: 48.14,
+        ofertado: 42.14,
+        capacidade: 42.0,
+        realizado: 28.5,
 
         // pátio
-        recepcao: 0,
-        vvs: 4,
-        classificacao: 2,
-        ctr: 4,
-        formacao: ["M021", "M023", "1M025"],
-        gdu: 16,
-        gdt: 28,
+        recepcao: 8,
+        vvs: 10,
+        classificacao: 5,
+        ctr: 6,
+        // lotes em formação e o(s) trem(ns) para onde vão
+        formacaoLotes: 2,
+        formacao: ["M017"],
+        gdu: 14,
+        gdt: 20,
 
         // tração
         sentido: "A Frente",
-        emDescarga: "2M003",
-        liberado: "M007",
-        pulmao: 7,
-        ultimaPartida: "M019",
+        emDescarga: "M005",
+        emDescargaObs: "D+1",
+        liberado: "M009",
+        pulmao: 4,
+        ultimaPartida: "M015",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
-        observacoes: [],
+        observacoes: [
+          "Capacidade reduzida de 45,00 para 42,00 lotes — manobra acima do orçado;",
+          "Excesso de lotes em RET-FILA (laudo eixo);",
+          "Retirada de locos em 1,17 contra desafio de 0,33.",
+        ],
 
         // rodapé: trocar as turmas a cada passagem
-        passagem: "Passagem de serviço turma A - C",
+        passagem: "Passagem de serviço",
       };
 
       /* ================== fim dos dados ================== */
@@ -433,7 +440,7 @@
         ["Recep.", TURNO.recepcao],
         ["VVs", TURNO.vvs],
         ["Class.", TURNO.classificacao],
-        ["Form.", TURNO.formacao.length],
+        ["Form.", TURNO.formacaoLotes != null ? TURNO.formacaoLotes : TURNO.formacao.length],
         ["CTR", TURNO.ctr],
       ].forEach(function (par) {
         var cel = document.createElement("span");
