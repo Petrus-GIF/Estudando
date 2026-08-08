@@ -204,10 +204,16 @@
 
       .linha {
         display: flex;
+        flex-wrap: wrap;
         align-items: baseline;
         gap: 6px;
         margin-top: 10px;
         font-size: 17px;
+      }
+
+      .linha small {
+        font-size: 12.5px;
+        color: #7d8b94;
       }
 
       .linha .r {
@@ -331,6 +337,7 @@
         <div class="linha buffer">
           <span class="r">Buffer</span>
           <span id="buffer"></span>
+          <small id="buffer-nota"></small>
         </div>
       </div>
 
@@ -367,44 +374,45 @@
          ======================================================= */
 
       var TURNO = {
-        data: "05/08/2026",
-        hora: "18:22",
+        data: "08/08/2026",
+        hora: "18:32",
 
         // descarregamento
-        d1: 45.0,
-        oferta: 48.14,
-        ofertado: 42.14,
-        capacidade: 42.0,
-        realizado: 28.5,
+        d1: 50.0,
+        oferta: 52.13,
+        ofertado: 40.13,
+        capacidade: 52.13,
+        realizado: 36.0,
 
         // pátio
-        recepcao: 8,
-        vvs: 10,
-        classificacao: 5,
-        ctr: 6,
+        recepcao: 7,
+        vvs: 4,
+        classificacao: 3,
+        ctr: 4,
         // lotes em formação e o(s) trem(ns) para onde vão
         formacaoLotes: 2,
-        formacao: ["M017"],
-        gdu: 14,
-        gdt: 20,
+        formacao: ["M031", "M033"],
+        gdu: 8,
+        gdt: 6,
+        bufferNota: "+ 20 GDUs + 10 GDTs vindo do freio",
 
         // tração
-        sentido: "A Frente",
+        sentido: "Atrás",
         emDescarga: "M005",
         emDescargaObs: "D+1",
-        liberado: "M009",
-        pulmao: 4,
-        ultimaPartida: "M015",
+        liberado: "2M005",
+        pulmao: 0,
+        ultimaPartida: "M029",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Capacidade reduzida de 45,00 para 42,00 lotes — manobra acima do orçado;",
-          "Excesso de lotes em RET-FILA (laudo eixo);",
-          "Retirada de locos em 1,17 contra desafio de 0,33.",
+          "Tração atrás e pulmão zerado;",
+          "Ciclo ferrovia elevado — excesso de lotes em RET-FILA, pendente laudo de eixo;",
+          "Desvios de locos acima — tempo de M.I. no PIAL e precaução de via no X04.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
-        passagem: "Passagem de serviço turma C - A",
+        passagem: "Passagem de serviço turma A - C",
       };
 
       /* ================== fim dos dados ================== */
@@ -460,6 +468,7 @@
       });
 
       texto("buffer", TURNO.gdu + " GDUs + " + TURNO.gdt + " GDTs");
+      if (TURNO.bufferNota) texto("buffer-nota", TURNO.bufferNota);
 
       texto("titulo-tracao", "Tração " + TURNO.sentido);
       texto("emDescarga", TURNO.emDescarga);
