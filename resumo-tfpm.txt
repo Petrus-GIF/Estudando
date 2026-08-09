@@ -1,28 +1,24 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 50.00
-Oferta: 52.13
-Ofertado: 40.13
-Capacidade: 52.13
-Realizado: 36
-Última partida: M029
-Tração Atrás: (M005 em descarga D+1 /// Tração: 2M005)
-00 loco no Pulmão
+D+1: 45.00
+Oferta: 49.39
+Ofertado: 40.39
+Capacidade: 49.39
+Realizado: 35
+Última partida: M023
+Tração A Frente: (2M001 em descarga D+1 /// Tração: M007)
+06 loco no Pulmão
 
-Recepção: 07
-VVs: 04 lotes vazios
-Classificação: 03
-Formação: M031 + M033
+Recepção: 03
+VVs: 00 vazios
+Classificação: 03 lotes
+Formação: M025 + M025 em manobras
 CTR: 04 lotes
 Buffer:
-08 GDUs + 06 GDTs e 20 GDUs + 10 GDTs vindo do freio
+P1A = 02 GDTs // Linha 007 = 04 GDTs // F4C = 20 GDUs e F5C = 26 GDTs
 
 *Observações:*
-- Tração atrás e pulmão zerado;
-- Ciclo ferrovia elevado por excesso de lotes em RET-FILA (pendente laudo de eixo);
-- Desvios de locos acima do orçado por tempo de M.I. no PIAL e precaução de via no X04;
-- Aumento na previsão de partida devido à boa performance do terminal;
-- 3h — VV1/VV3 sonda atuada TR1304 / VV2 atraso MO;
-- 6h — Manobra acima do orçado, reflexo de liberação de lotes CTR / VV2 atraso MO, troca de chapa de tração;
-- 12h — Manobra acima do orçado por tração atrás (VV1/VV2/VV3/VV6) // VV5 desalinhamento atuado TR1118 e nível alto do chute ER6 // VV6 vagões aplicados // VV7 precaução de via // VV8 tempo de M.I. no X3 W51;
-- 15h — VV4 atraso de manutenção preventiva // VV5 nível alto chute do trailer ER6;
-- 18h — VV3 nível alto de chute // VV4 atraso de M.P. // VV5 e VV8 corte da borda TR1114.
+- Ciclo e TMM elevados por baixa disponibilidade de locomotiva;
+- Desvios de locos acima por precaução de via e circulações no X04;
+- Aumento da previsão de descarregamento de 45,00 para 49,39 lotes por boa performance;
+- 06h — Segregação de lotes para formação de pilhas de SFHJ;
+- 18h — Ociosidade por intrajornada / VV3 falha no encoder do posicionador, operação Blend com VV4 / TR1304 atuação de sonda.

@@ -248,7 +248,9 @@
       .tem-obs .item .v { font-size: 20px; }
       .tem-obs .item .v.texto { font-size: 18px; }
       .tem-obs .grade { gap: 7px 8px; }
-      .tem-obs .linha { margin-top: 7px; }
+      .tem-obs .linha { margin-top: 6px; }
+      /* a nota do buffer quebra em duas linhas quando vem por localização */
+      .tem-obs .linha small { font-size: 11.5px; line-height: 1.25; }
 
       /* Só aparece quando o turno teve complicação. Fica fora do fluxo das
          faixas (sem flex: 1) para tomar a altura que precisa e comprimir o
@@ -374,45 +376,46 @@
          ======================================================= */
 
       var TURNO = {
-        data: "08/08/2026",
-        hora: "18:32",
+        data: "09/08/2026",
+        hora: "18:48",
 
         // descarregamento
-        d1: 50.0,
-        oferta: 52.13,
-        ofertado: 40.13,
-        capacidade: 52.13,
-        realizado: 36.0,
+        d1: 45.0,
+        oferta: 49.39,
+        ofertado: 40.39,
+        capacidade: 49.39,
+        realizado: 35.0,
 
         // pátio
-        recepcao: 7,
-        vvs: 4,
+        recepcao: 3,
+        vvs: 0,
         classificacao: 3,
         ctr: 4,
         // lotes em formação e o(s) trem(ns) para onde vão
         formacaoLotes: 2,
-        formacao: ["M031", "M033"],
-        gdu: 8,
-        gdt: 6,
-        bufferNota: "+ 20 GDUs + 10 GDTs vindo do freio",
+        formacao: ["M025"],
+        // total no buffer; a quebra por localização vai na nota
+        gdu: 20,
+        gdt: 32,
+        bufferNota: "P1A 02 GDT · Linha 007 04 GDT · F4C 20 GDU · F5C 26 GDT",
 
         // tração
-        sentido: "Atrás",
-        emDescarga: "M005",
+        sentido: "A Frente",
+        emDescarga: "2M001",
         emDescargaObs: "D+1",
-        liberado: "2M005",
-        pulmao: 0,
-        ultimaPartida: "M029",
+        liberado: "M007",
+        pulmao: 6,
+        ultimaPartida: "M023",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Tração atrás e pulmão zerado;",
-          "Ciclo ferrovia elevado — excesso de lotes em RET-FILA, pendente laudo de eixo;",
-          "Desvios de locos acima — tempo de M.I. no PIAL e precaução de via no X04.",
+          "Baixa disponibilidade de locomotiva — ciclo e TMM elevados;",
+          "Desvios de locos acima — precaução de via e circulações no X04;",
+          "18h — VV3 falha no encoder do posicionador, operação Blend com VV4.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
-        passagem: "Passagem de serviço turma A - C",
+        passagem: "Passagem de serviço",
       };
 
       /* ================== fim dos dados ================== */
