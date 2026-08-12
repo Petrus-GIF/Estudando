@@ -100,9 +100,12 @@ Três detalhes que já geraram erro:
 Edite o bloco `TURNO` com os valores do turno. `data` e `hora` são o momento da
 apuração, não a data em que você está mexendo no arquivo.
 
-O `passagem` é o rodapé — "Passagem de serviço turma A - C". As turmas mudam a
-cada troca, então confirme com o usuário se ele não disser quais são; herdar a
-do turno anterior manda o grupo uma informação errada assinada como certa.
+O `passagem` é o rodapé. **O padrão é "Passagem de serviço turma A - C"** — é a
+troca de sempre, o usuário confirmou. Use esse texto sem perguntar.
+
+Só mude quando ele indicar outra coisa, como já aconteceu com "turma C - A".
+Nesse caso vale para aquele turno; o seguinte volta ao padrão, a menos que ele
+diga o contrário.
 
 ### Quando o turno teve complicação
 
@@ -213,7 +216,7 @@ número velho no cartão vira decisão errada no turno seguinte.
   que falta. É rápido de responder e evita retrabalho.
 - **Falta o horário**: use o horário de envio do report, se estiver no print.
 - **Falta a data**: assuma o dia corrente e diga que assumiu.
-- **Falta a turma da passagem**: pergunte. É o rodapé, aparece em destaque.
+- **Falta a turma da passagem**: use o padrão "turma A - C", sem perguntar.
 
 ## Armadilhas
 
