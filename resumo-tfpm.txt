@@ -1,27 +1,27 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 48.00
-Oferta: 50.32
-Ofertado: 32.32
-Capacidade: 45.00
+D+1: 44.00
+Oferta: 46.82
+Ofertado: 31.82
+Capacidade: 46.82
 Realizado: 28.5
-Última partida: M019
-Tração A Frente: (2M001 em descarga D+1 /// Tração: 3M003)
-01 loco no Pulmão
+Última partida: M021
+Tração A Frente: (M001 em descarga D+1 /// Tração: 2M005)
+05 loco no Pulmão
 
-Recepção: 08 sobre roda
-VVs: 02 vazios no giroflex
-Classificação: 03 lotes
+Recepção: 03 sobre roda
+VVs: 00 lotes
+Classificação: 02 lotes
 Formação: M023 + M025 + 2M027 em manobras
-CTR: 02 lotes
+CTR: 05 lotes
 Buffer:
-P1A = 10 GDTs // F5C = 10 GDUs
+P1A = 06 GDTs // L-007CL = 26 GDTs // F5C = 10 GDUs + 02 GDTs aguardando condições para inversão do amarelo
 
 *Observações:*
-- V02 indisponível para posicionamento por 4h devido aumento na trinca; às 15:09 o ALFA 272 trabalhou e liberou a via para circulação normal;
-- Redução no descarregamento de 50,32 para 45,00 lotes por segregação de material;
-- Alarme de emergência atuado no PIAL;
-- TMM elevado por manobra com ociosidade, segregação de material e tração;
-- Porto recalculando a capacidade;
-- 9h — V1/V2/V3/V4 segregação de material por formação de carga para atender P4 / V05 vagões aplicados / V08 operação blend;
-- 12h — V1/V3/V4 segregação de material por formação de carga para atender P4 / V02 manobra longa por segregação / TR1108 troca de rolo / V05 vagões aplicados / V08 operação blend com V05;
-- 15h — V1/V2/V3/V4 segregação de material por formação de carga para atender P4 / VV2 trilho avariado.
+- Linhas por cima da oficina central interditadas pelo técnico de segurança, após inspeção: vegetação alta, trilho entre vias e resto de material de construção;
+- Impacto na formação e partida de trens por restrições em veículos de lotes liberados do CTR — trens impactados M013, M015 e M017; ofensor do ciclo;
+- TMM elevado por revezamento de equipe da turma C (25 equipes);
+- Desvios de locos acima por precaução de via e circulação no X0;
+- VV6 erro de leitura da sonda de nível;
+- 12h — Ociosidade por reflexo de M.I. na singela em D-1 / segregação de material FCKL para pátio sul;
+- 15h — Ajuste das parciais;
+- 18h — Ociosidade por perda na circulação dos trens carregados, em virtude da redução de velocidade por eixos tubulares / segregação de lotes FASN para pátio sul.
