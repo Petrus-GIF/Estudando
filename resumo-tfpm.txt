@@ -1,27 +1,25 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 44.00
-Oferta: 46.82
-Ofertado: 31.82
-Capacidade: 46.82
-Realizado: 28.5
-Última partida: M021
-Tração A Frente: (M001 em descarga D+1 /// Tração: 2M005)
-05 loco no Pulmão
+D+1: 46.00
+Oferta: 46.59
+Ofertado: 37.59
+Capacidade: 46.59
+Realizado: 32.5
+Última partida: M019
+Tração A Frente: (M003 em descarga D+1 /// Tração: 2M007)
+00 loco no Pulmão
 
-Recepção: 03 sobre roda
-VVs: 00 lotes
-Classificação: 02 lotes
-Formação: M023 + M025 + 2M027 em manobras
+Recepção: 04 sobre roda
+VVs: 04 lotes
+Classificação: 06 lotes, sendo 3 lotes RET FILA CTR
+Formação: M721 testando + M023 3 lotes em manobra
 CTR: 05 lotes
 Buffer:
-P1A = 06 GDTs // L-007CL = 26 GDTs // F5C = 10 GDUs + 02 GDTs aguardando condições para inversão do amarelo
+P1A = 14 GDTs // Liberados no freio 32 GDTs, na linha 65B aguardando condições
 
 *Observações:*
-- Linhas por cima da oficina central interditadas pelo técnico de segurança, após inspeção: vegetação alta, trilho entre vias e resto de material de construção;
-- Impacto na formação e partida de trens por restrições em veículos de lotes liberados do CTR — trens impactados M013, M015 e M017; ofensor do ciclo;
-- TMM elevado por revezamento de equipe da turma C (25 equipes);
-- Desvios de locos acima por precaução de via e circulação no X0;
-- VV6 erro de leitura da sonda de nível;
-- 12h — Ociosidade por reflexo de M.I. na singela em D-1 / segregação de material FCKL para pátio sul;
-- 15h — Ajuste das parciais;
-- 18h — Ociosidade por perda na circulação dos trens carregados, em virtude da redução de velocidade por eixos tubulares / segregação de lotes FASN para pátio sul.
+- Sem GDTs liberados para buffer; às 15:07 liberou o buffer no freio; às 17:30 o loco 728 chamou a OEM;
+- Ciclo elevado por excesso de lotes destinados ao CTR e formação de trens com excesso de manobras de lotes liberados oriundos do CTR e lote no freio em D-1;
+- 03 lotes em Ret-Fila CTR;
+- Desvios de locos acima por restrições no X4 e tempo de M.I. por baixo do PIAL;
+- MCH W92 sem correspondência por baixo do PIAL;
+- Segregação de material / manobra com ociosidade.

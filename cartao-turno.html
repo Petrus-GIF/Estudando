@@ -335,6 +335,7 @@
         <div class="linha">
           <span class="r">Formação</span>
           <span class="pilulas" id="formacao"></span>
+          <small id="formacao-nota"></small>
         </div>
         <div class="linha buffer">
           <span class="r">Buffer</span>
@@ -376,42 +377,43 @@
          ======================================================= */
 
       var TURNO = {
-        data: "13/08/2026",
-        hora: "18:29",
+        data: "16/08/2026",
+        hora: "18:19",
 
         // descarregamento
-        d1: 44.0,
-        oferta: 46.82,
-        ofertado: 31.82,
-        capacidade: 46.82,
-        realizado: 28.5,
+        d1: 46.0,
+        oferta: 46.59,
+        ofertado: 37.59,
+        capacidade: 46.59,
+        realizado: 32.5,
 
         // pátio
-        recepcao: 3,
-        vvs: 0,
-        classificacao: 2,
+        recepcao: 4,
+        vvs: 4,
+        classificacao: 6,
         ctr: 5,
         // lotes em formação e o(s) trem(ns) para onde vão
         formacaoLotes: 3,
-        formacao: ["M023", "M025", "2M027"],
+        formacao: ["M023", "M721"],
+        formacaoNota: "M721 testando",
         // total no buffer; a quebra por localização vai na nota
-        gdu: 10,
-        gdt: 34,
-        bufferNota: "P1A 06 GDT · L-007CL 26 GDT · F5C 10 GDU + 02 GDT",
+        gdu: 0,
+        gdt: 46,
+        bufferNota: "P1A 14 GDT · 32 GDT liberados no freio, na linha 65B",
 
         // tração
         sentido: "A Frente",
-        emDescarga: "M001",
+        emDescarga: "M003",
         emDescargaObs: "D+1",
-        liberado: "2M005",
-        pulmao: 5,
-        ultimaPartida: "M021",
+        liberado: "2M007",
+        pulmao: 0,
+        ultimaPartida: "M019",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Linhas sobre a oficina central interditadas pela segurança;",
-          "Restrições em veículos do CTR impactaram M013, M015 e M017;",
-          "TMM em 1,60 — revezamento de equipe da turma C.",
+          "Pulmão zerado; loco 728 chamou a OEM às 17:30;",
+          "03 dos 06 lotes em Classificação estão em Ret-Fila CTR;",
+          "MCH W92 sem correspondência por baixo do PIAL.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
@@ -469,6 +471,8 @@
         b.textContent = t;
         formacao.appendChild(b);
       });
+
+      if (TURNO.formacaoNota) texto("formacao-nota", TURNO.formacaoNota);
 
       texto("buffer", TURNO.gdu + " GDUs + " + TURNO.gdt + " GDTs");
       if (TURNO.bufferNota) texto("buffer-nota", TURNO.bufferNota);
