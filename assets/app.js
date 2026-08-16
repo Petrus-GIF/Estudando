@@ -92,22 +92,32 @@
       if (unidade) no.appendChild(el("p", "setor-unidade", unidade));
       if (extras) no.appendChild(extras);
       alvo.appendChild(no);
+      return no;
     }
 
     setor("Recepção", patio.recepcao.lotes, plural(patio.recepcao.lotes, "lote", "lotes"));
-    setor("VVs", patio.vvs.lotes, plural(patio.vvs.lotes, "lote", "lotes"));
+    var noVVs = setor("VVs", patio.vvs.lotes, plural(patio.vvs.lotes, "lote", "lotes"));
+    /* Os VVs às vezes vêm repartidos por estado — vazio aguardando linha,
+     * em descarga, aguardando posicionar. O total sozinho esconde isso. */
+    if (patio.vvs.nota) noVVs.appendChild(el("p", "nota-setor", patio.vvs.nota));
     setor(
       "Classificação",
       patio.classificacao.lotes,
       plural(patio.classificacao.lotes, "lote", "lotes")
     );
 
+    /* O número de Formação é de lotes, não de trens: um mesmo trem pode
+     * receber mais de um lote. Sem `lotes` no registro, cai na contagem de
+     * prefixos, que é como os dias antigos foram lançados. */
     var trens = patio.formacao.trens || [];
     var lista = el("ul", "etiquetas");
     trens.forEach(function (t) {
       lista.appendChild(el("li", null, t));
     });
-    setor("Formação", trens.length, plural(trens.length, "trem", "trens"), lista);
+    var lotesFormacao = preenchido(patio.formacao.lotes)
+      ? patio.formacao.lotes
+      : trens.length;
+    setor("Formação", lotesFormacao, plural(lotesFormacao, "lote", "lotes"), lista);
 
     setor("CTR", patio.ctr.lotes, plural(patio.ctr.lotes, "lote", "lotes"));
 
@@ -122,7 +132,10 @@
       caixa.appendChild(el("dd", null, String(par[1])));
       detalhe.appendChild(caixa);
     });
-    setor("Buffer", buffer.gdu + buffer.gdt, "vagões no total", detalhe);
+    var noBuffer = setor("Buffer", buffer.gdu + buffer.gdt, "vagões no total", detalhe);
+    /* Quando o buffer vem quebrado por localização, a quebra vale mais que
+     * o total — é ela que diz onde procurar o vagão. */
+    if (buffer.nota) noBuffer.appendChild(el("p", "nota-setor", buffer.nota));
   }
 
   /* ---------- indicadores ---------- */
