@@ -252,6 +252,24 @@
       /* a nota do buffer quebra em duas linhas quando vem por localização */
       .tem-obs .linha small { font-size: 11.5px; line-height: 1.25; }
 
+      /* Segunda régua de compressão. O conteúdo do turno varia — mais
+         observações, notas de buffer e formação quebrando em duas linhas — e
+         a primeira régua nem sempre dá conta. Aplicada por medição, só quando
+         precisa, para o turno comum não pagar por um caso raro. */
+      .aperta-mais .faixa { padding-top: 6px; padding-bottom: 6px; }
+      .aperta-mais .faixa h2 { margin-bottom: 4px; font-size: 11px; }
+      .aperta-mais .destaque .valor { font-size: 34px; }
+      .aperta-mais .destaque .de { font-size: 15px; }
+      .aperta-mais .patio .v { font-size: 21px; }
+      .aperta-mais .patio .cel { padding: 5px 2px; }
+      .aperta-mais .item .v { font-size: 18px; }
+      .aperta-mais .item .v.texto { font-size: 16px; }
+      .aperta-mais .linha { margin-top: 5px; font-size: 15px; }
+      .aperta-mais .linha small { font-size: 11px; }
+      .aperta-mais .pilulas b { font-size: 14px; padding: 2px 7px; }
+      .aperta-mais .obs { padding: 7px 14px 8px; }
+      .aperta-mais .obs ul { font-size: 12px; }
+
       /* Só aparece quando o turno teve complicação. Fica fora do fluxo das
          faixas (sem flex: 1) para tomar a altura que precisa e comprimir o
          resto, que é o que tem folga. */
@@ -377,43 +395,43 @@
          ======================================================= */
 
       var TURNO = {
-        data: "16/08/2026",
-        hora: "18:19",
+        data: "17/08/2026",
+        hora: "18:34",
 
         // descarregamento
-        d1: 46.0,
-        oferta: 46.59,
-        ofertado: 37.59,
-        capacidade: 46.59,
-        realizado: 32.5,
+        d1: 42.0,
+        oferta: 41.14,
+        ofertado: 28.14,
+        capacidade: 41.14,
+        realizado: 27.5,
 
         // pátio
-        recepcao: 4,
+        recepcao: 6,
         vvs: 4,
-        classificacao: 6,
-        ctr: 5,
+        classificacao: 3,
+        ctr: 3,
         // lotes em formação e o(s) trem(ns) para onde vão
         formacaoLotes: 3,
-        formacao: ["M023", "M721"],
-        formacaoNota: "M721 testando",
+        formacao: ["M023", "M725"],
+        formacaoNota: "100% liberados, em manobra",
         // total no buffer; a quebra por localização vai na nota
-        gdu: 0,
-        gdt: 46,
-        bufferNota: "P1A 14 GDT · 32 GDT liberados no freio, na linha 65B",
+        gdu: 6,
+        gdt: 24,
+        bufferNota: "P1A 06 GDU · L-007 24 GDT · solicitados +20 GDT e +20 GDU",
 
         // tração
         sentido: "A Frente",
-        emDescarga: "M003",
+        emDescarga: "M005",
         emDescargaObs: "D+1",
-        liberado: "2M007",
-        pulmao: 0,
-        ultimaPartida: "M019",
+        liberado: "M009",
+        pulmao: 6,
+        ultimaPartida: "M021",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Pulmão zerado; loco 728 chamou a OEM às 17:30;",
-          "03 dos 06 lotes em Classificação estão em Ret-Fila CTR;",
-          "MCH W92 sem correspondência por baixo do PIAL.",
+          "Baixa disponibilidade de loco — manobras longas, TMM em 1,51;",
+          "VV2 e VV3 com avaria na correia da lança EP2;",
+          "Oferta do Porto reduzida por alarme DD M110 no TU KM 277 / linha 2.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
@@ -496,6 +514,14 @@
       }
 
       texto("rodape", TURNO.passagem);
+
+      /* O print só serve se mostrar tudo. Se o conteúdo deste turno ainda
+       * estourar a tela depois da primeira compressão, aperta mais um pouco
+       * em vez de sair cortado. */
+      var raiz = document.documentElement;
+      if (raiz.scrollHeight > raiz.clientHeight) {
+        document.querySelector(".cartao").classList.add("aperta-mais");
+      }
     </script>
   </body>
 </html>

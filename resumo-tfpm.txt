@@ -1,25 +1,27 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 46.00
-Oferta: 46.59
-Ofertado: 37.59
-Capacidade: 46.59
-Realizado: 32.5
-Última partida: M019
-Tração A Frente: (M003 em descarga D+1 /// Tração: 2M007)
-00 loco no Pulmão
+D+1: 42.00
+Oferta: 41.14
+Ofertado: 28.14
+Capacidade: 41.14
+Realizado: 27.5
+Última partida: M021
+Tração A Frente: (M005 em descarga D+1 /// Tração: M009)
+06 loco no Pulmão
 
-Recepção: 04 sobre roda
-VVs: 04 lotes
-Classificação: 06 lotes, sendo 3 lotes RET FILA CTR
-Formação: M721 testando + M023 3 lotes em manobra
-CTR: 05 lotes
+Recepção: 06 sobre roda
+VVs: 04 lotes em descarga, sendo 3 programados para o CTR
+Classificação: 03 lotes, sendo 1 para o CTR
+Formação: M023 + M725 3 lotes 100% liberados em manobra
+CTR: 03 lotes
 Buffer:
-P1A = 14 GDTs // Liberados no freio 32 GDTs, na linha 65B aguardando condições
+P1A = 06 GDUs // L-007 = 24 GDTs e solicitado a liberação de 20 GDTs + 20 GDUs, aguardando previsão de liberação
 
 *Observações:*
-- Sem GDTs liberados para buffer; às 15:07 liberou o buffer no freio; às 17:30 o loco 728 chamou a OEM;
-- Ciclo elevado por excesso de lotes destinados ao CTR e formação de trens com excesso de manobras de lotes liberados oriundos do CTR e lote no freio em D-1;
-- 03 lotes em Ret-Fila CTR;
-- Desvios de locos acima por restrições no X4 e tempo de M.I. por baixo do PIAL;
-- MCH W92 sem correspondência por baixo do PIAL;
-- Segregação de material / manobra com ociosidade.
+- Ciclo elevado por manobra de lote do CTR, lote de eixo aguardando formação de trem 100% liberado e baixa disponibilidade de loco;
+- TMM acima do programa por baixa disponibilidade de loco para retirada dos lotes;
+- Redução na oferta do Porto por alarme DD M110 no TU KM 277 / linha 2;
+- Desvios de locos acima por tempo de M.I. por baixo do PIAL, precaução de via e M.I. no X4;
+- Aguardando retirada acima por M.I. por cima do PIAL;
+- 12h — Manobras longas por baixa disponibilidade de loco / ociosidade por restrição de velocidade dos trens carregados, em consequência de ultrassom de eixo e defeito do M006;
+- 15h — Ociosidade por restrição de velocidade dos trens carregados, em consequência de ultrassom de eixo e defeito do M006 / manobras longas por baixa disponibilidade de loco / VV5 vagões aplicados;
+- 18h — VV2 e VV3 avaria na correia da lança EP2 / VV5 apertos de parafusos do acionamento do M3 TR1380 / manobras longas por baixa disponibilidade de locos e M.I. no X4.
