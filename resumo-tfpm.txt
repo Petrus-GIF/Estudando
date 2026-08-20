@@ -1,27 +1,24 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 42.00
-Oferta: 41.14
-Ofertado: 28.14
-Capacidade: 41.14
-Realizado: 27.5
-Última partida: M021
-Tração A Frente: (M005 em descarga D+1 /// Tração: M009)
-06 loco no Pulmão
+D+1: 39.00
+Oferta: 35.29
+Ofertado: 29.29
+Capacidade: 35.29
+Realizado: 25.6
+Última partida: M019
+Tração Atrás: (2M5 em descarga D+1 /// Tração: M03 D+1)
+00 loco no Pulmão
 
-Recepção: 06 sobre roda
-VVs: 04 lotes em descarga, sendo 3 programados para o CTR
-Classificação: 03 lotes, sendo 1 para o CTR
-Formação: M023 + M725 3 lotes 100% liberados em manobra
-CTR: 03 lotes
+Recepção: 00
+VVs: 04 lotes em descarga
+Classificação: 04 lotes
+Formação: M021 / M023
+CTR: 06 lotes
 Buffer:
-P1A = 06 GDUs // L-007 = 24 GDTs e solicitado a liberação de 20 GDTs + 20 GDUs, aguardando previsão de liberação
+20 GDUs + 20 GDTs
 
 *Observações:*
-- Ciclo elevado por manobra de lote do CTR, lote de eixo aguardando formação de trem 100% liberado e baixa disponibilidade de loco;
-- TMM acima do programa por baixa disponibilidade de loco para retirada dos lotes;
-- Redução na oferta do Porto por alarme DD M110 no TU KM 277 / linha 2;
-- Desvios de locos acima por tempo de M.I. por baixo do PIAL, precaução de via e M.I. no X4;
-- Aguardando retirada acima por M.I. por cima do PIAL;
-- 12h — Manobras longas por baixa disponibilidade de loco / ociosidade por restrição de velocidade dos trens carregados, em consequência de ultrassom de eixo e defeito do M006;
-- 15h — Ociosidade por restrição de velocidade dos trens carregados, em consequência de ultrassom de eixo e defeito do M006 / manobras longas por baixa disponibilidade de loco / VV5 vagões aplicados;
-- 18h — VV2 e VV3 avaria na correia da lança EP2 / VV5 apertos de parafusos do acionamento do M3 TR1380 / manobras longas por baixa disponibilidade de locos e M.I. no X4.
+- Supervisório de abastecimento do PIAL com defeito, industrial atuando, no momento sem previsão; locos saindo do PIAL para abastecer na oficina;
+- Tração atrás;
+- Ciclo elevado por baixa disponibilidade de locomotiva, excesso de lote em Ret-Fila CTR (lote pendente de laudo de eixo) e aguardando o próximo lote 100% liberado de eixo para circulação normal na malha;
+- TMM acima do programa por manobra após ociosidade;
+- 6h — Segregação para o Pátio Norte / TR1379 obstrução de chute.

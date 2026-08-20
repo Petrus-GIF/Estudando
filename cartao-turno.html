@@ -169,6 +169,15 @@
 
       .item .v.texto { font-size: 20px; }
 
+      /* qualificador do valor — o "D+1" do loco em descarga e da tração */
+      .item small {
+        display: block;
+        margin-top: 1px;
+        font-size: 10.5px;
+        line-height: 1.2;
+        color: #94a2aa;
+      }
+
       /* ---- pátio ---- */
 
       .patio {
@@ -264,6 +273,7 @@
       .aperta-mais .patio .cel { padding: 5px 2px; }
       .aperta-mais .item .v { font-size: 18px; }
       .aperta-mais .item .v.texto { font-size: 16px; }
+      .aperta-mais .item small { font-size: 10px; }
       .aperta-mais .linha { margin-top: 5px; font-size: 15px; }
       .aperta-mais .linha small { font-size: 11px; }
       .aperta-mais .pilulas b { font-size: 14px; padding: 2px 7px; }
@@ -367,9 +377,11 @@
         <div class="grade">
           <span class="item"
             ><span class="r">Em descarga</span><span class="v texto" id="emDescarga"></span
+            ><small id="emDescarga-nota"></small
           ></span>
           <span class="item"
             ><span class="r">Tração</span><span class="v texto" id="liberado"></span
+            ><small id="liberado-nota"></small
           ></span>
           <span class="item"><span class="r">Pulmão</span><span class="v" id="pulmao"></span></span>
           <span class="item"
@@ -395,43 +407,41 @@
          ======================================================= */
 
       var TURNO = {
-        data: "17/08/2026",
-        hora: "18:34",
+        data: "20/08/2026",
+        hora: "18:21",
 
         // descarregamento
-        d1: 42.0,
-        oferta: 41.14,
-        ofertado: 28.14,
-        capacidade: 41.14,
-        realizado: 27.5,
+        d1: 39.0,
+        oferta: 35.29,
+        ofertado: 29.29,
+        capacidade: 35.29,
+        realizado: 25.6,
 
         // pátio
-        recepcao: 6,
+        recepcao: 0,
         vvs: 4,
-        classificacao: 3,
-        ctr: 3,
+        classificacao: 4,
+        ctr: 6,
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 3,
-        formacao: ["M023", "M725"],
-        formacaoNota: "100% liberados, em manobra",
-        // total no buffer; a quebra por localização vai na nota
-        gdu: 6,
-        gdt: 24,
-        bufferNota: "P1A 06 GDU · L-007 24 GDT · solicitados +20 GDT e +20 GDU",
+        formacaoLotes: 2,
+        formacao: ["M021", "M023"],
+        gdu: 20,
+        gdt: 20,
 
         // tração
-        sentido: "A Frente",
-        emDescarga: "M005",
+        sentido: "Atrás",
+        emDescarga: "2M5",
         emDescargaObs: "D+1",
-        liberado: "M009",
-        pulmao: 6,
-        ultimaPartida: "M021",
+        liberado: "M03",
+        liberadoObs: "D+1",
+        pulmao: 0,
+        ultimaPartida: "M019",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Baixa disponibilidade de loco — manobras longas, TMM em 1,51;",
-          "VV2 e VV3 com avaria na correia da lança EP2;",
-          "Oferta do Porto reduzida por alarme DD M110 no TU KM 277 / linha 2.",
+          "Supervisório de abastecimento do PIAL com defeito, sem previsão — locos abastecendo na oficina;",
+          "Tração atrás e pulmão zerado;",
+          "Excesso de lote em Ret-Fila CTR, pendente laudo de eixo.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
@@ -497,6 +507,8 @@
 
       texto("titulo-tracao", "Tração " + TURNO.sentido);
       texto("emDescarga", TURNO.emDescarga);
+      if (TURNO.emDescargaObs) texto("emDescarga-nota", TURNO.emDescargaObs);
+      if (TURNO.liberadoObs) texto("liberado-nota", TURNO.liberadoObs);
       texto("liberado", TURNO.liberado);
       texto("pulmao", dois(TURNO.pulmao));
       texto("ultima", TURNO.ultimaPartida);
