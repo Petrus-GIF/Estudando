@@ -360,6 +360,10 @@
       <div class="faixa">
         <h2>Pátio</h2>
         <div class="patio" id="patio"></div>
+        <div class="linha" id="linha-recepcao" hidden>
+          <span class="r">Recepção</span>
+          <small id="recepcao-nota"></small>
+        </div>
         <div class="linha">
           <span class="r">Formação</span>
           <span class="pilulas" id="formacao"></span>
@@ -407,41 +411,43 @@
          ======================================================= */
 
       var TURNO = {
-        data: "20/08/2026",
-        hora: "18:21",
+        data: "21/08/2026",
+        hora: "18:44",
 
         // descarregamento
-        d1: 39.0,
-        oferta: 35.29,
-        ofertado: 29.29,
-        capacidade: 35.29,
-        realizado: 25.6,
+        d1: 42.0,
+        oferta: 42.5,
+        ofertado: 36.5,
+        capacidade: 42.5,
+        realizado: 25.5,
 
         // pátio
-        recepcao: 0,
-        vvs: 4,
-        classificacao: 4,
-        ctr: 6,
+        recepcao: 5,
+        recepcaoNota: "+ 36 vagões na L6B aguardando Porto",
+        vvs: 7,
+        classificacao: 0,
+        ctr: 4,
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 2,
-        formacao: ["M021", "M023"],
-        gdu: 20,
-        gdt: 20,
+        formacaoLotes: 3,
+        formacao: ["M719", "M021", "1M023"],
+        formacaoNota: "M719 com CCO",
+        gdu: 8,
+        gdt: 18,
+        bufferNota: "já solicitados +20 GDU e +10 GDT",
 
         // tração
-        sentido: "Atrás",
-        emDescarga: "2M5",
-        emDescargaObs: "D+1",
-        liberado: "M03",
+        sentido: "Empate",
+        emDescarga: "M03",
+        liberado: "2M5",
         liberadoObs: "D+1",
         pulmao: 0,
-        ultimaPartida: "M019",
+        ultimaPartida: "M017",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Supervisório de abastecimento do PIAL com defeito, sem previsão — locos abastecendo na oficina;",
-          "Tração atrás e pulmão zerado;",
-          "Excesso de lote em Ret-Fila CTR, pendente laudo de eixo.",
+          "Pulmão zerado e tração em empate;",
+          "Desligamento de energia no CTR; lote de eixo aguardando formação 100% liberada;",
+          "Sondas atuando nos TR 1103, 1104 e 1114 — material com alta sílica.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
@@ -499,6 +505,11 @@
         b.textContent = t;
         formacao.appendChild(b);
       });
+
+      if (TURNO.recepcaoNota) {
+        texto("recepcao-nota", TURNO.recepcaoNota);
+        document.getElementById("linha-recepcao").hidden = false;
+      }
 
       if (TURNO.formacaoNota) texto("formacao-nota", TURNO.formacaoNota);
 

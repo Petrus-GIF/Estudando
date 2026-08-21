@@ -1,24 +1,28 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 39.00
-Oferta: 35.29
-Ofertado: 29.29
-Capacidade: 35.29
-Realizado: 25.6
-Última partida: M019
-Tração Atrás: (2M5 em descarga D+1 /// Tração: M03 D+1)
+D+1: 42.00
+Oferta: 42.50
+Ofertado: 36.50
+Capacidade: 42.50
+Realizado: 25.5
+Última partida: M017
+Tração Empate: (M03 em descarga /// Tração: 2M5 D+1)
 00 loco no Pulmão
 
-Recepção: 00
-VVs: 04 lotes em descarga
-Classificação: 04 lotes
-Formação: M021 / M023
-CTR: 06 lotes
+Recepção: 05 lotes + 36 vgs na L6B ag. Porto
+VVs: 07 lotes em descarga
+Classificação: 00
+Formação: M719 com CCO / M021 / 1M023
+CTR: 04 lotes
 Buffer:
-20 GDUs + 20 GDTs
+08 GDU / 18 GDT — obs: já solicitado 20 GDU + 10 GDT
 
 *Observações:*
-- Supervisório de abastecimento do PIAL com defeito, industrial atuando, no momento sem previsão; locos saindo do PIAL para abastecer na oficina;
-- Tração atrás;
-- Ciclo elevado por baixa disponibilidade de locomotiva, excesso de lote em Ret-Fila CTR (lote pendente de laudo de eixo) e aguardando o próximo lote 100% liberado de eixo para circulação normal na malha;
-- TMM acima do programa por manobra após ociosidade;
-- 6h — Segregação para o Pátio Norte / TR1379 obstrução de chute.
+- Ciclo elevado por baixa disponibilidade de locomotiva, desligamento de energia no CTR e lote de eixo aguardando formação de trem 100% liberado;
+- TMM elevado por manobra de ociosidade e segregação de material;
+- Desvio de locos acima por precaução de via no X4;
+- Tração em empate, pulmão zerado;
+- 6h — Atuação de chave de sonda nos TR 1103, 1104 e 1114 por manuseio de material com alta sílica;
+- 09h — VV05 atraso de manutenção de oportunidade / ER2 falha de comunicação / TR1378 falha na abertura de freio;
+- 12h — VV3 e VV4 operação blend PFCJ / VV2 desalinhamento TR1314;
+- 15h — VV3 e VV4 operação blend PFCJ / VV2 drenagem do TR1108 e atuação de sonda TR1303 / VV8 TR1380 atuação de emergência;
+- 18h — Atuação de sonda TR1302 e TR1114 / V08 atuação de chave detector de rasgo.
