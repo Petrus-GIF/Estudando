@@ -1,28 +1,27 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 42.00
-Oferta: 42.50
-Ofertado: 36.50
-Capacidade: 42.50
-Realizado: 25.5
-Última partida: M017
-Tração Empate: (M03 em descarga /// Tração: 2M5 D+1)
+D+1: 39.00
+Oferta: 35.41
+Ofertado: 28.41
+Capacidade: 35.41
+Realizado: 25
+Última partida: M015
+Tração A Frente: (M003 em descarga D+1 /// Tração: M05 D+1)
 00 loco no Pulmão
 
-Recepção: 05 lotes + 36 vgs na L6B ag. Porto
-VVs: 07 lotes em descarga
-Classificação: 00
-Formação: M719 com CCO / M021 / 1M023
-CTR: 04 lotes
+Recepção: 04
+VVs: 06 cr / 02 vazios aguardando retirada
+Classificação: 02
+Formação: M17 / M019
+CTR: 05 lotes
 Buffer:
-08 GDU / 18 GDT — obs: já solicitado 20 GDU + 10 GDT
+20 GDU / 36 GDT
 
 *Observações:*
-- Ciclo elevado por baixa disponibilidade de locomotiva, desligamento de energia no CTR e lote de eixo aguardando formação de trem 100% liberado;
-- TMM elevado por manobra de ociosidade e segregação de material;
-- Desvio de locos acima por precaução de via no X4;
-- Tração em empate, pulmão zerado;
-- 6h — Atuação de chave de sonda nos TR 1103, 1104 e 1114 por manuseio de material com alta sílica;
-- 09h — VV05 atraso de manutenção de oportunidade / ER2 falha de comunicação / TR1378 falha na abertura de freio;
-- 12h — VV3 e VV4 operação blend PFCJ / VV2 desalinhamento TR1314;
-- 15h — VV3 e VV4 operação blend PFCJ / VV2 drenagem do TR1108 e atuação de sonda TR1303 / VV8 TR1380 atuação de emergência;
-- 18h — Atuação de sonda TR1302 e TR1114 / V08 atuação de chave detector de rasgo.
+- Ciclo ferrovia elevado pela grande quantidade de manobra de lotes liberados pelo CTR para formação dos trens, e manobra para formação de lotes para trens sem restrição de velocidade;
+- Ciclo Porto acima do programa por segregação;
+- Desvio de locos acima por defeito de loco liberada para tração na L-P1 e tempo de M.I. por baixo das linhas do PIAL;
+- Pulmão zerado;
+- 3h — Segregação;
+- 6h — Segregação por formação de pilha no pátio norte / VV3 e VV4 corte de cabos TR313-64 / VV4 obstrução de chute no TR1104 e TR1302 com SASN;
+- 9h — V06 e V08 com restrição operacional de não operar com FCKL; 2º e 3º lote M722 FCKL no pátio;
+- 12h — V03 com restrição operacional TR1106 p/ 1314 / V05 e V07 segregação de material FCSS para pátio norte / V08 AL-15 e AL-16 nível alto de chute.
