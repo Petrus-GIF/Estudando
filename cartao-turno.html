@@ -368,6 +368,10 @@
           <span class="r">VVs</span>
           <small id="vvs-nota"></small>
         </div>
+        <div class="linha" id="linha-ctr" hidden>
+          <span class="r">CTR</span>
+          <small id="ctr-nota"></small>
+        </div>
         <div class="linha" id="linha-recepcao" hidden>
           <span class="r">Recepção</span>
           <small id="recepcao-nota"></small>
@@ -419,42 +423,43 @@
          ======================================================= */
 
       var TURNO = {
-        data: "24/08/2026",
-        hora: "18:49",
+        data: "25/08/2026",
+        hora: "18:33",
 
         // descarregamento
-        d1: 39.0,
-        oferta: 35.41,
-        ofertado: 28.41,
-        capacidade: 35.41,
-        realizado: 25.0,
+        d1: 45.0,
+        oferta: 49.75,
+        ofertado: 46.75,
+        capacidade: 46.75,
+        realizado: 35.0,
 
         // pátio
-        recepcao: 4,
-        vvs: 8,
-        vvsNota: "06 carregados · 02 vazios aguardando retirada",
-        classificacao: 2,
-        ctr: 5,
+        recepcao: 8,
+        vvs: 7,
+        classificacao: 3,
+        ctr: 4,
+        ctrNota: "02 dos 04 liberados",
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 2,
-        formacao: ["M17", "M019"],
-        gdu: 20,
-        gdt: 36,
+        formacaoLotes: 3,
+        formacao: ["M25", "M027", "2M029"],
+        formacaoNota: "faltando manobrar",
+        gdu: 14,
+        gdt: 28,
 
         // tração
-        sentido: "A Frente",
-        emDescarga: "M003",
+        sentido: "Empate",
+        emDescarga: "2M09",
         emDescargaObs: "D+1",
-        liberado: "M05",
+        liberado: "2M11",
         liberadoObs: "D+1",
         pulmao: 0,
-        ultimaPartida: "M015",
+        ultimaPartida: "M723",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Pulmão zerado pelo quarto turno seguido;",
-          "V06 e V08 sem operar com FCKL — 2º e 3º lote do M722 FCKL no pátio;",
-          "Defeito em loco liberada para tração na L-P1.",
+          "Baixa disponibilidade de locomotiva — TMM em 1,75, o pior da série;",
+          "Tração em empate e pulmão zerado pelo quinto turno seguido;",
+          "TR1114 com sonda atuada, necessário limpeza.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
@@ -516,6 +521,11 @@
       if (TURNO.vvsNota) {
         texto("vvs-nota", TURNO.vvsNota);
         document.getElementById("linha-vvs").hidden = false;
+      }
+
+      if (TURNO.ctrNota) {
+        texto("ctr-nota", TURNO.ctrNota);
+        document.getElementById("linha-ctr").hidden = false;
       }
 
       if (TURNO.recepcaoNota) {
