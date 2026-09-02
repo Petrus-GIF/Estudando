@@ -1,26 +1,24 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 45.00
-Oferta: 49.71
-Ofertado: 37.98
-Capacidade: 47.00
-Realizado: 31.2
-Última partida: M023
-Tração A Frente: (2M3 em descarga D+1 /// Tração: 3M7 D+1)
-08 loco no Pulmão
+D+1: 30.00
+Oferta: 40.25
+Ofertado: 37.25
+Capacidade: 37.25
+Realizado: 27
+Última partida: M719
+Tração A Frente: (2M03 em descarga /// Tração: M011)
+06 loco no Pulmão
 
-Recepção: 05
+Recepção: 04
 VVs: 06 lotes
-Classificação: 03
-Formação: M725 / 2M027
-CTR: 04 lotes, sendo 01 liberado
+Classificação: 02
+Formação: M721 / M023 / M725 / 1M027
+CTR: 01
 Buffer:
-20 GDUs + 24 GDTs
+14 GDTs / 10 GDUs
 
 *Observações:*
-- Ciclo elevado por reflexo de segregação e manobra dos lotes do CTR por formação de trens 100% liberados;
-- Desligamento programado do Pátio Norte de 06h às 12h;
-- Ociosidade por reflexo da manutenção integrada em Açailândia; segregação e manobra acima do orçado pós ociosidade;
-- 9h — VV08 atuação de chave detector de rasgo TR1380;
-- 18h — V5, V6, V7 e V8 ociosos por emergência no M027, km 291;
-- Pendente atualização do painel de metas do mês;
+- TMM elevado por precaução de via;
+- 12h — VV2 vagões aplicados / VV5 e VV8 priorizando formação de carga para o pátio norte;
+- 15h — VV03 manobra longa por tempo de M.I. no X03;
+- 18h — VV05 avaria no trilho da ferrovia / V05 e V08 anticolisão EP5 com RP5;
 - Desvio de locos não está atualizando.
