@@ -1,24 +1,25 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 30.00
-Oferta: 40.25
-Ofertado: 37.25
-Capacidade: 37.25
-Realizado: 27
-Última partida: M719
-Tração A Frente: (2M03 em descarga /// Tração: M011)
-06 loco no Pulmão
+D+1: 45.00
+Oferta: 47.18
+Ofertado: 38.18
+Capacidade: 47.18
+Realizado: 33.6
+Última partida: M721
+Tração Empate: (1M05 em descarga D+1 /// Tração: 1M7 D+1)
+00 loco no Pulmão
 
-Recepção: 04
-VVs: 06 lotes
-Classificação: 02
-Formação: M721 / M023 / M725 / 1M027
-CTR: 01
+Recepção: 01 lote
+VVs: 08 lotes
+Classificação: 03 lotes
+Formação: M025 / M027 / M029 / 1M031
+CTR: 04 lotes
 Buffer:
-14 GDTs / 10 GDUs
+28 GDTs / 32 GDUs
 
 *Observações:*
-- TMM elevado por precaução de via;
-- 12h — VV2 vagões aplicados / VV5 e VV8 priorizando formação de carga para o pátio norte;
-- 15h — VV03 manobra longa por tempo de M.I. no X03;
-- 18h — VV05 avaria no trilho da ferrovia / V05 e V08 anticolisão EP5 com RP5;
-- Desvio de locos não está atualizando.
+- Ciclo e TMM elevados por reflexo de lotes em RET FILA CTR no D-1 e no D, e baixa disponibilidade de loco;
+- Ciclo Porto fora por segregação de material;
+- Desvio de loco acima por precaução de via e priorização na circulação dos lotes para o CTR;
+- Tração em empate, pulmão zerado;
+- 06h — Manobras ferroviárias longas por baixa disponibilidade de locomotiva / VV2 atraso de MP da EP4 / VV6 vagões aplicados;
+- 18h — Segregação de FCKL para O102 / ociosidade por defeito de locomotiva M250 no km 833.

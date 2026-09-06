@@ -423,39 +423,41 @@
          ======================================================= */
 
       var TURNO = {
-        data: "02/09/2026",
-        hora: "18:27",
+        data: "06/09/2026",
+        hora: "18:23",
 
         // descarregamento
-        d1: 30.0,
-        oferta: 40.25,
-        ofertado: 37.25,
-        capacidade: 37.25,
-        realizado: 27.0,
+        d1: 45.0,
+        oferta: 47.18,
+        ofertado: 38.18,
+        capacidade: 47.18,
+        realizado: 33.6,
 
         // pátio
-        recepcao: 4,
-        vvs: 6,
-        classificacao: 2,
-        ctr: 1,
+        recepcao: 1,
+        vvs: 8,
+        classificacao: 3,
+        ctr: 4,
         // lotes em formação e o(s) trem(ns) para onde vão
         formacaoLotes: 4,
-        formacao: ["M721", "M023", "M725", "1M027"],
-        gdu: 10,
-        gdt: 14,
+        formacao: ["M025", "M027", "M029", "1M031"],
+        gdu: 32,
+        gdt: 28,
 
         // tração
-        sentido: "A Frente",
-        emDescarga: "2M03",
-        liberado: "M011",
-        pulmao: 6,
-        ultimaPartida: "M719",
+        sentido: "Empate",
+        emDescarga: "1M05",
+        emDescargaObs: "D+1",
+        liberado: "1M7",
+        liberadoObs: "D+1",
+        pulmao: 0,
+        ultimaPartida: "M721",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "18h — VV05 com avaria no trilho da ferrovia;",
-          "18h — V05 e V08 com anticolisão EP5 com RP5;",
-          "Desvio de locos sem atualizar pelo segundo dia.",
+          "Tração em empate e pulmão zerado;",
+          "18h — Ociosidade por defeito da locomotiva M250 no km 833;",
+          "Lotes em Ret-Fila CTR no D-1 e no D, com baixa disponibilidade de loco.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
