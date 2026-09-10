@@ -1,23 +1,25 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 51.00
-Oferta: 52.68
-Ofertado: 40.18
-Capacidade: 52.68
-Realizado: 38
-Última partida: M723
-Tração A Frente: (2M05 em descarga D+1 /// Tração: 2M011 D+1)
-08 loco no Pulmão
+D+1: 42.00
+Oferta: 41.98
+Ofertado: 32.98
+Capacidade: 38.00
+Realizado: 24.7
+Última partida: M717
+Tração Atrás: (2M5 em descarga D+1 /// Tração: 2M1 D+1)
+00 loco no Pulmão
 
-Recepção: 08 lotes
-VVs: 07 lotes
-Classificação: 04 lotes
-Formação: M025 / M027 / M029
-CTR: 03 lotes
+Recepção: 04 lotes
+VVs: 06 lotes
+Classificação: 02 lotes
+Formação: M19 / M021 / 2M023
+CTR: 05 lotes
 Buffer:
-14 GDTs / 20 GDUs
+30 GDTs / 20 GDUs
 
 *Observações:*
-- Ciclo e TMM acima do programa por baixa disponibilidade de locomotiva, Ret-Fila em D-1 e excesso de lotes vazios em D;
-- Desvio de locos acima por priorização na circulação de lotes no X4;
-- 15h — Ociosidade por emergência do M704 no km 3; manobras longas por excesso de lotes vazios, reflexo de lotes em Ret-Fila CTR no D-1;
-- 18h — VV2, VV3, VV5, VV7 e VV8 com manobras elevadas por reflexo de ociosidade; VV4 e VV6 com manobras longas por segregação de material.
+- Tração atrás;
+- TMM elevado por defeito no corrimão da locomotiva 247 e baixa disponibilidade de locomotiva;
+- Manobras elevadas de retirada de locomotivas por causa das 07 locomotivas retidas do PIAL para a Oficina, e do atraso no desligamento programado do PIAL;
+- Ciclo elevado por excesso de lotes programados para o CTR, manobras de lotes liberados do CTR para formação de trens e baixa disponibilidade de locos;
+- 06h — Manobras ferroviárias longas por revezamento de equipe e defeito na locomotiva 247;
+- 15h — V5 e V06 atraso de M.I. / V7 deslocamento do trilho do giro.
