@@ -1,25 +1,27 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 42.00
-Oferta: 41.98
-Ofertado: 32.98
-Capacidade: 38.00
-Realizado: 24.7
-Última partida: M717
-Tração Atrás: (2M5 em descarga D+1 /// Tração: 2M1 D+1)
+D+1: 48.00
+Oferta: 48.50
+Ofertado: 45.50
+Capacidade: 48.50
+Realizado: 33
+Última partida: M725
+Tração Atrás: (2M3 em descarga D+1 /// Tração: 1M3 D+1)
 00 loco no Pulmão
 
-Recepção: 04 lotes
-VVs: 06 lotes
-Classificação: 02 lotes
-Formação: M19 / M021 / 2M023
-CTR: 05 lotes
+Recepção: 08
+VVs: 05 lotes
+Classificação: 04
+Formação: M727 / 1M029
+CTR: 05 lotes, sendo 03 liberados
 Buffer:
-30 GDTs / 20 GDUs
+22 GDUs + 20 GDTs
 
 *Observações:*
+- 06 locos liberadas na oficina no fim do turno não estão na contagem de locomotivas, por falta de check. Somente a próxima equipe irá verificar se estão aptas para tração;
 - Tração atrás;
-- TMM elevado por defeito no corrimão da locomotiva 247 e baixa disponibilidade de locomotiva;
-- Manobras elevadas de retirada de locomotivas por causa das 07 locomotivas retidas do PIAL para a Oficina, e do atraso no desligamento programado do PIAL;
-- Ciclo elevado por excesso de lotes programados para o CTR, manobras de lotes liberados do CTR para formação de trens e baixa disponibilidade de locos;
-- 06h — Manobras ferroviárias longas por revezamento de equipe e defeito na locomotiva 247;
-- 15h — V5 e V06 atraso de M.I. / V7 deslocamento do trilho do giro.
+- Ciclo e TMM elevados por baixa disponibilidade de locomotivas, excesso de lotes programados para o CTR em D-1 e manobras de lotes 100% liberados;
+- Desvio de locos acima do programa por restrição de via e priorização da circulação de lotes no X04;
+- 09h — VV3 manobra elevada por segregação de material / VV6, VV7 e VV8 manobras elevadas por baixa disponibilidade de locomotiva e lotes em Ret-Fila CTR;
+- 12h — Manobras elevadas por baixa disponibilidade de locomotiva e lotes em Ret-Fila CTR / V06 vagões aplicados / V08 desalinhamento do trailer ER5;
+- 15h — Manobras elevadas por baixa disponibilidade de locomotiva / V08 segregação de material;
+- 18h — Manobras elevadas por baixa disponibilidade de locomotiva / V06 vagões aplicados / V08 segregação de material.

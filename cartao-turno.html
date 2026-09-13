@@ -423,41 +423,42 @@
          ======================================================= */
 
       var TURNO = {
-        data: "10/09/2026",
-        hora: "18:26",
+        data: "13/09/2026",
+        hora: "18:40",
 
         // descarregamento
-        d1: 42.0,
-        oferta: 41.98,
-        ofertado: 32.98,
-        capacidade: 38.0,
-        realizado: 24.7,
+        d1: 48.0,
+        oferta: 48.5,
+        ofertado: 45.5,
+        capacidade: 48.5,
+        realizado: 33.0,
 
         // pátio
-        recepcao: 4,
-        vvs: 6,
-        classificacao: 2,
+        recepcao: 8,
+        vvs: 5,
+        classificacao: 4,
         ctr: 5,
+        ctrNota: "03 dos 05 liberados",
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 3,
-        formacao: ["M19", "M021", "2M023"],
-        gdu: 20,
-        gdt: 30,
+        formacaoLotes: 2,
+        formacao: ["M727", "1M029"],
+        gdu: 22,
+        gdt: 20,
 
         // tração
         sentido: "Atrás",
-        emDescarga: "2M5",
+        emDescarga: "2M3",
         emDescargaObs: "D+1",
-        liberado: "2M1",
+        liberado: "1M3",
         liberadoObs: "D+1",
         pulmao: 0,
-        ultimaPartida: "M717",
+        ultimaPartida: "M725",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Tração atrás e pulmão zerado;",
-          "Locomotiva 247 com defeito no corrimão;",
-          "07 locomotivas retidas do PIAL para a Oficina; atraso no desligamento programado do PIAL.",
+          "Pulmão 00, mas 06 locos liberadas na oficina estão fora da contagem — falta check para tração;",
+          "Tração atrás;",
+          "Baixa disponibilidade de loco e lotes em Ret-Fila CTR — manobra elevada o turno todo.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
