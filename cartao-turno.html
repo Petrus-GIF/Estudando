@@ -423,42 +423,40 @@
          ======================================================= */
 
       var TURNO = {
-        data: "13/09/2026",
-        hora: "18:40",
+        data: "22/09/2026",
+        hora: "18:09",
 
         // descarregamento
-        d1: 48.0,
-        oferta: 48.5,
-        ofertado: 45.5,
-        capacidade: 48.5,
-        realizado: 33.0,
+        d1: 50.0,
+        oferta: 51.46,
+        ofertado: 42.54,
+        capacidade: 50.0,
+        realizado: 33.5,
 
         // pátio
-        recepcao: 8,
-        vvs: 5,
-        classificacao: 4,
+        recepcao: 10,
+        vvs: 6,
+        classificacao: 2,
         ctr: 5,
-        ctrNota: "03 dos 05 liberados",
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 2,
-        formacao: ["M727", "1M029"],
-        gdu: 22,
-        gdt: 20,
+        formacaoLotes: 4,
+        formacao: ["M725", "M727", "M729", "1M031"],
+        gdu: 20,
+        gdt: 4,
+        bufferNota: "reposição já solicitada",
 
         // tração
-        sentido: "Atrás",
-        emDescarga: "2M3",
-        emDescargaObs: "D+1",
-        liberado: "1M3",
-        liberadoObs: "D+1",
+        sentido: "Empate",
+        emDescarga: "2M03",
+        liberado: "M03",
         pulmao: 0,
-        ultimaPartida: "M725",
+        ultimaPartida: "M721",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Pulmão 00, mas 06 locos liberadas na oficina estão fora da contagem — falta check para tração;",
-          "Tração atrás;",
-          "Baixa disponibilidade de loco e lotes em Ret-Fila CTR — manobra elevada o turno todo.",
+          "TR5 com lote a recuar para a Classificação — vagão condenado pela manutenção;",
+          "Pulmão 00, mas 02 locos liberadas na oficina pendentes de checklist;",
+          "Tração em empate; manobras elevadas o turno todo por tração atrás.",
         ],
 
         // rodapé: trocar as turmas a cada passagem

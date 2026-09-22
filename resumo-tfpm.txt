@@ -1,27 +1,26 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 48.00
-Oferta: 48.50
-Ofertado: 45.50
-Capacidade: 48.50
-Realizado: 33
-Última partida: M725
-Tração Atrás: (2M3 em descarga D+1 /// Tração: 1M3 D+1)
+D+1: 50.00
+Oferta: 51.46
+Ofertado: 42.54
+Capacidade: 50.00
+Realizado: 33.5
+Última partida: M721
+Tração Empate: (2M03 em descarga /// Tração: M03)
 00 loco no Pulmão
 
-Recepção: 08
-VVs: 05 lotes
-Classificação: 04
-Formação: M727 / 1M029
-CTR: 05 lotes, sendo 03 liberados
+Recepção: 10
+VVs: 06 lotes
+Classificação: 02
+Formação: M725 / M727 / M729 / 1M031
+CTR: 05 lotes
 Buffer:
-22 GDUs + 20 GDTs
+20 GDUs + 04 GDTs (já solicitado)
 
 *Observações:*
-- 06 locos liberadas na oficina no fim do turno não estão na contagem de locomotivas, por falta de check. Somente a próxima equipe irá verificar se estão aptas para tração;
-- Tração atrás;
-- Ciclo e TMM elevados por baixa disponibilidade de locomotivas, excesso de lotes programados para o CTR em D-1 e manobras de lotes 100% liberados;
-- Desvio de locos acima do programa por restrição de via e priorização da circulação de lotes no X04;
-- 09h — VV3 manobra elevada por segregação de material / VV6, VV7 e VV8 manobras elevadas por baixa disponibilidade de locomotiva e lotes em Ret-Fila CTR;
-- 12h — Manobras elevadas por baixa disponibilidade de locomotiva e lotes em Ret-Fila CTR / V06 vagões aplicados / V08 desalinhamento do trailer ER5;
-- 15h — Manobras elevadas por baixa disponibilidade de locomotiva / V08 segregação de material;
-- 18h — Manobras elevadas por baixa disponibilidade de locomotiva / V06 vagões aplicados / V08 segregação de material.
+- Na TR5 estamos com um lote que precisará ser recuado para a Classificação devido a defeito de vagão. A turma da manutenção condenou;
+- Tração em empate, porém temos 02 locos liberadas na oficina pendentes de checklist;
+- Ciclo ferrovia elevado por tração atrás e reflexo de Ret-Fila CTR no D-1;
+- Desvio de locos acima por precaução de via e tempo de M.I. no X04;
+- 12h — Manobras elevadas por tração atrás / V08 atuação de sonda ER5;
+- 15h — Manobras elevadas por tração atrás / V01 vagões aplicados / V06 atuação de sonda ER6;
+- 18h — Manobras elevadas por tração atrás / ociosidade por ocupação falsa TS 512 em QAL.
