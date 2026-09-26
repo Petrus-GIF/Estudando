@@ -423,40 +423,42 @@
          ======================================================= */
 
       var TURNO = {
-        data: "22/09/2026",
+        data: "26/09/2026",
         hora: "18:09",
 
         // descarregamento
-        d1: 50.0,
-        oferta: 51.46,
-        ofertado: 42.54,
-        capacidade: 50.0,
-        realizado: 33.5,
+        d1: 36.0,
+        oferta: 39.66,
+        ofertado: 39.66,
+        capacidade: 39.66,
+        realizado: 28.0,
 
         // pátio
-        recepcao: 10,
+        recepcao: 6,
         vvs: 6,
-        classificacao: 2,
-        ctr: 5,
+        classificacao: 5,
+        ctr: 4,
+        ctrNota: "03 dos 04 já liberados",
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 4,
-        formacao: ["M725", "M727", "M729", "1M031"],
-        gdu: 20,
-        gdt: 4,
-        bufferNota: "reposição já solicitada",
+        formacaoLotes: 3,
+        formacao: ["M717", "M19", "2M021"],
+        gdu: 18,
+        gdt: 26,
 
         // tração
-        sentido: "Empate",
-        emDescarga: "2M03",
-        liberado: "M03",
-        pulmao: 0,
-        ultimaPartida: "M721",
+        sentido: "A Frente",
+        emDescarga: "M07",
+        emDescargaObs: "D+1",
+        liberado: "M15",
+        liberadoObs: "D+1",
+        pulmao: 10,
+        ultimaPartida: "M715",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "TR5 com lote a recuar para a Classificação — vagão condenado pela manutenção;",
-          "Pulmão 00, mas 02 locos liberadas na oficina pendentes de checklist;",
-          "Tração em empate; manobras elevadas o turno todo por tração atrás.",
+          "L71 interditada — KG3 apagou; socorro no local às 12:39; redução na partida;",
+          "Defeito no KGT 03 e tempo de M.I. na formação;",
+          "M.I. programada na formação de cima por 3h — impacto na partida de trens.",
         ],
 
         // rodapé: trocar as turmas a cada passagem

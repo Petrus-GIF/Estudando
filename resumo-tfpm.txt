@@ -1,26 +1,24 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 50.00
-Oferta: 51.46
-Ofertado: 42.54
-Capacidade: 50.00
-Realizado: 33.5
-Última partida: M721
-Tração Empate: (2M03 em descarga /// Tração: M03)
-00 loco no Pulmão
+D+1: 36.00
+Oferta: 39.66
+Ofertado: 39.66
+Capacidade: 39.66
+Realizado: 28
+Última partida: M715
+Tração A Frente: (M07 em descarga D+1 /// Tração: M15 D+1)
+10 loco no Pulmão
 
-Recepção: 10
+Recepção: 06
 VVs: 06 lotes
-Classificação: 02
-Formação: M725 / M727 / M729 / 1M031
-CTR: 05 lotes
+Classificação: 05
+Formação: M717 / M19 / 2M021
+CTR: 04 lotes, sendo 03 já liberados
 Buffer:
-20 GDUs + 04 GDTs (já solicitado)
+18 GDUs + 26 GDTs
 
 *Observações:*
-- Na TR5 estamos com um lote que precisará ser recuado para a Classificação devido a defeito de vagão. A turma da manutenção condenou;
-- Tração em empate, porém temos 02 locos liberadas na oficina pendentes de checklist;
-- Ciclo ferrovia elevado por tração atrás e reflexo de Ret-Fila CTR no D-1;
-- Desvio de locos acima por precaução de via e tempo de M.I. no X04;
-- 12h — Manobras elevadas por tração atrás / V08 atuação de sonda ER5;
-- 15h — Manobras elevadas por tração atrás / V01 vagões aplicados / V06 atuação de sonda ER6;
-- 18h — Manobras elevadas por tração atrás / ociosidade por ocupação falsa TS 512 em QAL.
+- KG3 apagou na L71, aguardando apoio do socorro; socorro no local às 12:39h — impacto na partida de trens, nas manobras de lotes do CTR e no loco para freio por cima;
+- Redução na partida devido interdição da L71;
+- M.I. programada na formação de cima por 3h — impacto na partida de trens;
+- Ciclo elevado por reflexo de segregação e manobra dos lotes do CTR: formação de trens, tempo de M.I. na formação e defeito do KGT 03;
+- Desvio de locos acima por precaução de via e circulação de lotes no X04.
