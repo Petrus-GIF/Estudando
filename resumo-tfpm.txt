@@ -1,24 +1,25 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 36.00
-Oferta: 39.66
-Ofertado: 39.66
-Capacidade: 39.66
-Realizado: 28
-Última partida: M715
-Tração A Frente: (M07 em descarga D+1 /// Tração: M15 D+1)
-10 loco no Pulmão
+D+1: 48.00
+Oferta: 56.46
+Ofertado: 49.46
+Capacidade: 51.00
+Realizado: 38
+Última partida: M023
+Tração A Frente: (1M05 em descarga /// Tração: 1M09)
+06 loco no Pulmão
 
-Recepção: 06
-VVs: 06 lotes
-Classificação: 05
-Formação: M717 / M19 / 2M021
-CTR: 04 lotes, sendo 03 já liberados
+Recepção: 04
+VVs: 07 lotes
+Classificação: 04
+Formação: M725 / M727 / M729
+CTR: 05 lotes, sendo 01 já liberado
 Buffer:
-18 GDUs + 26 GDTs
+38 vagões — 14 GDT na 007-CL e 24 GDU na F5C-FO, os dois disponíveis
+Nada liberado no freio
+Meta GDU no pátio: 20 vagões
 
 *Observações:*
-- KG3 apagou na L71, aguardando apoio do socorro; socorro no local às 12:39h — impacto na partida de trens, nas manobras de lotes do CTR e no loco para freio por cima;
-- Redução na partida devido interdição da L71;
-- M.I. programada na formação de cima por 3h — impacto na partida de trens;
-- Ciclo elevado por reflexo de segregação e manobra dos lotes do CTR: formação de trens, tempo de M.I. na formação e defeito do KGT 03;
-- Desvio de locos acima por precaução de via e circulação de lotes no X04.
+- Ciclo TFPM e TMM elevados por reflexo de retenção de vagão em D-1, segregação e precaução de via;
+- Ciclo Porto elevado por segregação de material e DF de equipamentos;
+- 12h — VV3 DD nível alto do chute ER2, falha no amostrador TR1401 e sonda TR1356 / VV7 defeito no inversor do TR1111;
+- 18h — VV2 falha na translação TR1102 / VV4 defeito de subvelocidade TR1307 / VV8 manobra elevada por revezamento de equipe e velocidade restrita.
