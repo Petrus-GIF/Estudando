@@ -1,25 +1,22 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 48.00
-Oferta: 56.46
-Ofertado: 49.46
-Capacidade: 51.00
-Realizado: 38
-Última partida: M023
-Tração A Frente: (1M05 em descarga /// Tração: 1M09)
-06 loco no Pulmão
+D+1: 36.00
+Oferta: 40.63
+Ofertado: 40.63
+Capacidade: 40.63
+Realizado: 29.2
+Última partida: M017
+Tração A Frente: (M03 em descarga D+1 /// Tração: 1M07)
+02 loco no Pulmão
 
-Recepção: 04
+Recepção: 07
 VVs: 07 lotes
-Classificação: 04
-Formação: M725 / M727 / M729
-CTR: 05 lotes, sendo 01 já liberado
+Classificação: 03
+Formação: M21 / 1M23
+CTR: 03
 Buffer:
-38 vagões — 14 GDT na 007-CL e 24 GDU na F5C-FO, os dois disponíveis
-Nada liberado no freio
-Meta GDU no pátio: 20 vagões
+18 GDUs + 40 GDTs
 
 *Observações:*
-- Ciclo TFPM e TMM elevados por reflexo de retenção de vagão em D-1, segregação e precaução de via;
-- Ciclo Porto elevado por segregação de material e DF de equipamentos;
-- 12h — VV3 DD nível alto do chute ER2, falha no amostrador TR1401 e sonda TR1356 / VV7 defeito no inversor do TR1111;
-- 18h — VV2 falha na translação TR1102 / VV4 defeito de subvelocidade TR1307 / VV8 manobra elevada por revezamento de equipe e velocidade restrita.
+- TMM acima do programa por manobra com ociosidade;
+- Ciclo Ferrovia acima por lotes aguardando descarga e liberação do CTR;
+- Ciclo Porto acima do programa por vagões de tombamento: o lote entrou em descarga dia 01/10, descarregou somente dia 02/10 e partiu no M71 dia 03/10.
