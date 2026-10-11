@@ -1,0 +1,26 @@
+🚂🚂🚂*Resumo TFPM*🚂🚂🚂
+D+1: 40.00
+Oferta: 40.89
+Ofertado: 37.89
+Capacidade: 40.89
+Realizado: 25
+Última partida: M015
+Tração A Frente: (M03 em descarga D+1 /// Tração: M05 D+1)
+01 loco no Pulmão
+
+Recepção: 10
+VVs: 07 lotes
+Classificação: 01
+Formação: M017 / 2M019
+CTR: 04
+Buffer:
+38 GDTs + 20 GDUs
+
+*Observações:*
+- TMM elevado por precaução de via e manobra de ociosidade;
+- M112 com problema de paradas no GPV e encerramento no pátio, chamado aberto (INC05192075). Os 03 lotes já estão vazios. Normalizou 13h10;
+- Desvio de locos acima por troca de turno no X4, precaução de via e aguardando desvio no PIAL (concentrado);
+- 03h — Segregação de material;
+- 06h — Segregação de material;
+- 15h — VV6 e VV7 nível alto de chute;
+- 18h — VV07 parado por ER6 bloqueado com RP7-15k38, nível alto do chute / VV2 e VV4 sonda EP2 / VV3 desalinhamento TR313k59.

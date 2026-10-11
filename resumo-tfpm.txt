@@ -1,22 +1,22 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 36.00
-Oferta: 40.63
-Ofertado: 40.63
-Capacidade: 40.63
-Realizado: 29.2
-Última partida: M017
-Tração A Frente: (M03 em descarga D+1 /// Tração: 1M07)
-02 loco no Pulmão
+D+1: 33.00
+Oferta: 36.29
+Ofertado: 36.29
+Capacidade: 36.29
+Realizado: 29
+Última partida: M019
+Tração Empate: (2M05 em descarga /// Tração: 1M7 D+1)
+00 loco no Pulmão
 
-Recepção: 07
+Recepção: 01
 VVs: 07 lotes
-Classificação: 03
-Formação: M21 / 1M23
+Classificação: 04
+Formação: M021 / 2M023
 CTR: 03
 Buffer:
-18 GDUs + 40 GDTs
+14 GDTs + 08 GDUs
 
 *Observações:*
-- TMM acima do programa por manobra com ociosidade;
-- Ciclo Ferrovia acima por lotes aguardando descarga e liberação do CTR;
-- Ciclo Porto acima do programa por vagões de tombamento: o lote entrou em descarga dia 01/10, descarregou somente dia 02/10 e partiu no M71 dia 03/10.
+- Ciclo acima por lote aguardando classificação e CTR; lote liberado no freio incluído no 2º lote do M015;
+- Aguardando retirada acima do programa por revezamento da equipe do PIAL e excesso de manobra de locos retidas destinadas para oficina (04 locos até o momento);
+- Tração em empate, pulmão zerado.
