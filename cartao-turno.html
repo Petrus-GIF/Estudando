@@ -376,7 +376,7 @@
           <span class="r">Recepção</span>
           <small id="recepcao-nota"></small>
         </div>
-        <div class="linha">
+        <div class="linha" id="linha-formacao">
           <span class="r">Formação</span>
           <span class="pilulas" id="formacao"></span>
           <small id="formacao-nota"></small>
@@ -423,40 +423,42 @@
          ======================================================= */
 
       var TURNO = {
-        data: "11/10/2026",
-        hora: "17:46",
+        data: "12/10/2026",
+        hora: "18:11",
 
         // descarregamento
-        d1: 33.0,
-        oferta: 36.29,
-        ofertado: 36.29,
-        capacidade: 36.29,
-        realizado: 29.0,
+        d1: 41.0,
+        oferta: 37.41,
+        ofertado: 37.41,
+        capacidade: 51.0,
+        realizado: 27.0,
 
         // pátio
-        recepcao: 1,
-        vvs: 7,
-        classificacao: 4,
-        ctr: 3,
+        recepcao: 5,
+        vvs: 6,
+        classificacao: 5,
+        ctr: 6,
+        ctrNota: "01 liberado, no CTR2A",
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 2,
-        formacao: ["M021", "2M023"],
-        gdu: 8,
-        gdt: 14,
+        formacaoLotes: 0,
+        formacao: [],
+        gdu: 16,
+        gdt: 30,
 
         // tração
-        sentido: "Empate",
-        emDescarga: "2M05",
-        liberado: "1M7",
+        sentido: "A Frente",
+        emDescarga: "2M5",
+        emDescargaObs: "D+1",
+        liberado: "M07",
         liberadoObs: "D+1",
-        pulmao: 0,
+        pulmao: 2,
         ultimaPartida: "M019",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Tração em empate e pulmão zerado;",
-          "04 locos retidas destinadas à oficina — excesso de manobra, aguardando retirada em 0,48;",
-          "Ciclo acima por lote aguardando classificação e CTR; lote liberado no freio entrou no 2º lote do M015.",
+          "Formação zerada; Classificação em 05 e CTR em 06, com apenas 01 liberado;",
+          "Ciclo ferrovia elevado por manobra de ociosidade, precaução de via e manobra de lotes do CTR;",
+          "Desvio de locos acima por precaução de via e tempo de M.I. por baixo do PIAL.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
@@ -531,6 +533,11 @@
       }
 
       if (TURNO.formacaoNota) texto("formacao-nota", TURNO.formacaoNota);
+      /* Formação zerada não tem prefixo nenhum; sem isso sobraria o rótulo
+       * sozinho, como já aconteceu com a Recepção. */
+      if (!TURNO.formacao.length && !TURNO.formacaoNota) {
+        document.getElementById("linha-formacao").hidden = true;
+      }
 
       texto("buffer", TURNO.gdu + " GDUs + " + TURNO.gdt + " GDTs");
       if (TURNO.bufferNota) texto("buffer-nota", TURNO.bufferNota);

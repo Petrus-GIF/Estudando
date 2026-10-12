@@ -1,22 +1,21 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 33.00
-Oferta: 36.29
-Ofertado: 36.29
-Capacidade: 36.29
-Realizado: 29
+D+1: 41.00
+Oferta: 37.41
+Ofertado: 37.41
+Capacidade: 51.00
+Realizado: 27
 Última partida: M019
-Tração Empate: (2M05 em descarga /// Tração: 1M7 D+1)
-00 loco no Pulmão
+Tração A Frente: (2M5 em descarga D+1 /// Tração: M07 D+1)
+02 loco no Pulmão
 
-Recepção: 01
-VVs: 07 lotes
-Classificação: 04
-Formação: M021 / 2M023
-CTR: 03
+Recepção: 05
+VVs: 06 lotes
+Classificação: 05
+Formação: zerado
+CTR: 06 lotes, sendo 01 liberado no CTR2A
 Buffer:
-14 GDTs + 08 GDUs
+30 GDTs + 16 GDUs
 
 *Observações:*
-- Ciclo acima por lote aguardando classificação e CTR; lote liberado no freio incluído no 2º lote do M015;
-- Aguardando retirada acima do programa por revezamento da equipe do PIAL e excesso de manobra de locos retidas destinadas para oficina (04 locos até o momento);
-- Tração em empate, pulmão zerado.
+- Ciclo ferrovia elevado por manobra de ociosidade, precaução de via e manobra de lotes do CTR;
+- Desvio acima do programa por precaução de via e tempo de M.I. no PIAL por baixo.
