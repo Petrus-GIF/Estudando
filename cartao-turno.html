@@ -423,42 +423,41 @@
          ======================================================= */
 
       var TURNO = {
-        data: "12/10/2026",
-        hora: "18:11",
+        data: "20/10/2026",
+        hora: "18:30",
 
         // descarregamento
-        d1: 41.0,
-        oferta: 37.41,
-        ofertado: 37.41,
-        capacidade: 51.0,
-        realizado: 27.0,
+        d1: 49.0,
+        oferta: 49.0,
+        ofertado: 49.0,
+        capacidade: 49.0,
+        realizado: 35.0,
 
         // pátio
-        recepcao: 5,
+        recepcao: 8,
         vvs: 6,
-        classificacao: 5,
-        ctr: 6,
-        ctrNota: "01 liberado, no CTR2A",
+        classificacao: 3,
+        ctr: 3,
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 0,
-        formacao: [],
-        gdu: 16,
+        formacaoLotes: 3,
+        formacao: ["M021", "M023", "M025"],
+        formacaoNota: "M021 ag. CCO · M023 pronto · M025 juntando 3º lote",
+        gdu: 20,
         gdt: 30,
 
         // tração
-        sentido: "A Frente",
-        emDescarga: "2M5",
+        sentido: "Atrás",
+        emDescarga: "M05",
         emDescargaObs: "D+1",
-        liberado: "M07",
-        liberadoObs: "D+1",
-        pulmao: 2,
-        ultimaPartida: "M019",
+        liberado: "1M05",
+        pulmao: 0,
+        ultimaPartida: "M021",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Formação zerada; Classificação em 05 e CTR em 06, com apenas 01 liberado;",
-          "Ciclo ferrovia elevado por manobra de ociosidade, precaução de via e manobra de lotes do CTR;",
-          "Desvio de locos acima por precaução de via e tempo de M.I. por baixo do PIAL.",
+          "V069 na Recepção com pendência de distribuição da carga na plataforma (dormentes);",
+          "Tração atrás e pulmão zerado;",
+          "18h — VV07 em segregação; V1 e V03 com manobra longa por QLP e tempo de M.I. no X3.",
         ],
 
         // rodapé: trocar as turmas a cada passagem

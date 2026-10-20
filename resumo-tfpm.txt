@@ -1,21 +1,29 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 41.00
-Oferta: 37.41
-Ofertado: 37.41
-Capacidade: 51.00
-Realizado: 27
-Última partida: M019
-Tração A Frente: (2M5 em descarga D+1 /// Tração: M07 D+1)
-02 loco no Pulmão
+D+1: 49.00
+Oferta: 49.00
+Ofertado: 49.00
+Capacidade: 49.00
+Realizado: 35
+Última partida: M021
+Tração Atrás: (M05 em descarga D+1 /// Tração: 1M05)
+00 loco no Pulmão
 
-Recepção: 05
+Recepção: 08
 VVs: 06 lotes
-Classificação: 05
-Formação: zerado
-CTR: 06 lotes, sendo 01 liberado no CTR2A
+Classificação: 03
+Formação: M021 ag. CCO / M023 pronto / M025 juntando 3º lote
+CTR: 03
 Buffer:
-30 GDTs + 16 GDUs
+20 GDUs + 30 GDTs
 
 *Observações:*
-- Ciclo ferrovia elevado por manobra de ociosidade, precaução de via e manobra de lotes do CTR;
-- Desvio acima do programa por precaução de via e tempo de M.I. no PIAL por baixo.
+- V069 na recepção com pendência de distribuição da carga na plataforma (dormentes);
+- TMM acima por solicitação de manobra de 3º lote e precaução;
+- Ciclo acima por tração atrás e reflexo de classificação de vagão em D-1;
+- Desvio de locos acima do programa por tempo de M.I. na entrada do PIAL;
+- Tração atrás;
+- 6h — Manobra por segregação Porto / TR1359 e TR1302 obstrução de chute, material com injeção no pátio M;
+- 9h — VV03 manuseio no pátio M / VV8 segregação;
+- 12h — Segregação priorizando carga do pátio sul;
+- 15h — VV5 segregação e EP6 anticolisão com RP6;
+- 18h — VV07 segregação / V1 e V03 manobra longa por QLP e tempo de M.I. no X3.
