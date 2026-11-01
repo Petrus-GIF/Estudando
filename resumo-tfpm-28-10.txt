@@ -1,0 +1,21 @@
+🚂🚂🚂*Resumo TFPM*🚂🚂🚂
+D+1: 48.00
+Oferta: 50.02
+Ofertado: 47.02
+Capacidade: 50.02
+Realizado: 38
+Última partida: M023
+Tração Empate: (1M03 em descarga D+1 /// Tração: 2M5 D+1)
+00 loco no Pulmão
+
+Recepção: 06 lotes
+VVs: 07 lotes
+Classificação: 05
+Formação: M025 / M027 / 1M029
+CTR: 04
+Buffer:
+08 GDT + 18 GDU (já liberados no freio 20 GDTs)
+
+*Observações:*
+- Desvio de locos acima do programa por circulação de lotes e M.I. programada no X04;
+- Tração em empate, pulmão zerado.

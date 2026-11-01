@@ -423,41 +423,43 @@
          ======================================================= */
 
       var TURNO = {
-        data: "20/10/2026",
-        hora: "18:30",
+        data: "01/11/2026",
+        hora: "18:17",
 
         // descarregamento
-        d1: 49.0,
-        oferta: 49.0,
-        ofertado: 49.0,
-        capacidade: 49.0,
-        realizado: 35.0,
+        d1: 45.0,
+        oferta: 45.63,
+        ofertado: 36.63,
+        capacidade: 45.63,
+        realizado: 34.5,
 
         // pátio
-        recepcao: 8,
-        vvs: 6,
+        recepcao: 3,
+        recepcaoNota: "03 desviando para V1 e V3; o 3º não está negociado",
+        vvs: 3,
         classificacao: 3,
         ctr: 3,
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 3,
-        formacao: ["M021", "M023", "M025"],
-        formacaoNota: "M021 ag. CCO · M023 pronto · M025 juntando 3º lote",
-        gdu: 20,
-        gdt: 30,
+        formacaoLotes: 4,
+        formacao: ["M025", "M027", "M029", "1M031"],
+        formacaoNota: "M025 com CCO",
+        gdu: 12,
+        gdt: 18,
 
         // tração
-        sentido: "Atrás",
-        emDescarga: "M05",
+        sentido: "A Frente",
+        emDescarga: "M03",
         emDescargaObs: "D+1",
-        liberado: "1M05",
-        pulmao: 0,
-        ultimaPartida: "M021",
+        liberado: "M07",
+        liberadoObs: "D+1",
+        pulmao: 4,
+        ultimaPartida: "M025",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "V069 na Recepção com pendência de distribuição da carga na plataforma (dormentes);",
-          "Tração atrás e pulmão zerado;",
-          "18h — VV07 em segregação; V1 e V03 com manobra longa por QLP e tempo de M.I. no X3.",
+          "Trens prontos aguardando condições de partida (implosão);",
+          "Defeito de vagão no M13 — aumento do ciclo ferrovia;",
+          "Report sem os indicadores de novembro: o programa não foi carregado.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
