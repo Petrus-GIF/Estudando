@@ -423,43 +423,42 @@
          ======================================================= */
 
       var TURNO = {
-        data: "01/11/2026",
-        hora: "18:17",
+        data: "04/11/2026",
+        hora: "18:27",
 
         // descarregamento
         d1: 45.0,
-        oferta: 45.63,
-        ofertado: 36.63,
-        capacidade: 45.63,
-        realizado: 34.5,
+        oferta: 47.05,
+        ofertado: 41.05,
+        capacidade: 47.05,
+        realizado: 30.0,
 
         // pátio
         recepcao: 3,
-        recepcaoNota: "03 desviando para V1 e V3; o 3º não está negociado",
-        vvs: 3,
-        classificacao: 3,
-        ctr: 3,
+        vvs: 6,
+        classificacao: 2,
+        ctr: 2,
         // lotes em formação e o(s) trem(ns) para onde vão
-        formacaoLotes: 4,
-        formacao: ["M025", "M027", "M029", "1M031"],
-        formacaoNota: "M025 com CCO",
-        gdu: 12,
-        gdt: 18,
+        formacaoLotes: 2,
+        formacao: ["M023", "1M25"],
+        gdu: 16,
+        gdt: 4,
+        bufferNota: "há GDT blocado, aguardando só a liberação do PCM",
 
         // tração
-        sentido: "A Frente",
-        emDescarga: "M03",
+        sentido: "Empate",
+        emDescarga: "2M1",
         emDescargaObs: "D+1",
-        liberado: "M07",
+        liberado: "3M3",
         liberadoObs: "D+1",
         pulmao: 4,
-        ultimaPartida: "M025",
+        ultimaPartida: "M021",
 
         // complicações do turno; deixe [] quando não houver nada a registrar
         observacoes: [
-          "Trens prontos aguardando condições de partida (implosão);",
-          "Defeito de vagão no M13 — aumento do ciclo ferrovia;",
-          "Report sem os indicadores de novembro: o programa não foi carregado.",
+          "Buffer em 04 GDT, mas há GDT blocado aguardando só a liberação do PCM;",
+          "18h — TR1113 com amostrador primário fora de posição;",
+          "Tração em empate; TMM acima por precaução de via.",
         ],
 
         // rodapé: trocar as turmas a cada passagem
