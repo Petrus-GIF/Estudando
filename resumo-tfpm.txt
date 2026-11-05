@@ -1,23 +1,25 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
-D+1: 45.00
-Oferta: 47.05
-Ofertado: 41.05
-Capacidade: 47.05
-Realizado: 30
-Última partida: M021
-Tração Empate: (2M1 em descarga D+1 /// Tração: 3M3 D+1)
+D+1: 38.00
+Oferta: 39.89
+Ofertado: 30.89
+Capacidade: 39.89
+Realizado: 25
+Última partida: M015
+Tração A Frente: (2M03 em descarga D+1 /// Tração: M07 D+1)
 04 loco no Pulmão
 
-Recepção: 03 lotes
+Recepção: zerado, aguardando desvio do M08
 VVs: 06 lotes
 Classificação: 02
-Formação: M023 / 1M25
-CTR: 02
+Formação: M017
+CTR: 03
 Buffer:
-04 GDT + 16 GDUs — já tem vagão blocado GDT, aguardando somente o PCM liberar
+28 GDT + 08 GDUs
 
 *Observações:*
-- TMM elevado por precaução de via;
-- Tração em empate;
-- 15h — Segregação, priorizando formação de carga para o pátio norte;
-- 18h — VV3 segregação do 1M102/03 FCSS para H416, aguardando finalizar VV2 e VV6 / segregação de material 1M004/03 para 1287 VV7 e VV8 / TR1113 amostrador primário fora de posição.
+- TMM acima por precaução de via e manobras com ociosidade;
+- Ocupação na via entre as linhas R4A e R4B (X1) — liberado 12:53;
+- Desvio acima do programa por M.I. programada por baixo do PIAL e preferência de puxadas de lotes;
+- 18h — VV2 segregação de material 3ºM006/04 SFLS para F219 / VV6 TR113 falha no amostrador primário / VV7 segregação de material 3ºM202/04 FCKL para 0124;
+- Ociosidade por reflexo da M.I. na Singela e acúmulo de trens carregados na região de Marabá e Açailândia, por ocorrências da ferrovia em D-1: falha de sinalização no km 310, ato de vandalismo no km 504 e defeito na locomotiva 504;
+- VV6 — Segregação de material M104043 FCSS destinado para B352.
