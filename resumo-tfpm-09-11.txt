@@ -1,0 +1,26 @@
+🚂🚂🚂*Resumo TFPM*🚂🚂🚂
+D+1: 45.00
+Oferta: 51.25
+Ofertado: 42.25
+Capacidade: 42.00
+Realizado: 29
+Última partida: M015
+Tração A Frente: (M01 em descarga D+1 /// Tração: M011)
+09 loco no Pulmão
+
+Recepção: 09
+VVs: 06 lotes
+Classificação: 01
+Formação: M017 / M019 / 1M21
+CTR: 04
+Buffer:
+30 GDT + 12 GDUs
+
+*Observações:*
+- Ciclo Porto fora, por reflexo do desligamento em D-1;
+- Trens carregados aguardando, reflexo do desligamento em D-1;
+- Recebimento de trens conforme performance do Porto;
+- Desvio de locos acima por retenção de vagões (14) e preferência de puxada de lotes;
+- 9h — VV1 nível alto do chute de descarga ER3 / VV4 AL1301 falha no contador / VV7 segregação de lote SFHJ / VV8 nível alto dos AL e falha no grampo 5;
+- VV7 chave de emergência no TR1380 / VV7 e VV8 TR1114 nível alto do chute / VV7 e VV8 EP6 atuação de sonda e TR1384 ATS / VV2 atraso de MP;
+- 15h — VV02 falha no giro / V07 ER5 falha no enrolador de cabo.
