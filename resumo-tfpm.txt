@@ -1,22 +1,24 @@
 🚂🚂🚂*Resumo TFPM*🚂🚂🚂
 D+1: 45.00
-Oferta: 52.13
-Ofertado: 52.13
-Capacidade: 52.13
-Realizado: 42
+Oferta: 44.73
+Ofertado: 38.73
+Capacidade: 45.00
+Realizado: 30
 Última partida: M023
-Tração Empate: (1M3 em descarga D+1 /// Tração: M03 D+1)
+Tração Atrás: (M03 em descarga D+1 /// Tração: M01 D+1)
 00 loco no Pulmão
 
-Recepção: 05 lotes
+Recepção: 06 lotes
 VVs: 07 lotes
-Classificação: 06
-CTR: 04
-Formação: 1M029
+Classificação: 03 lotes
+Formação: M027
+CTR: 03 lotes
 Buffer:
-08 GDUs + 28 GDTs
+06 GDUs + 14 GDTs
 
 *Observações:*
-- Ciclo Porto elevado por segregação de material;
-- Desvio de locos acima por priorização da circulação de lotes para liberação da descarga e partida de trens, devido ao excesso de lotes;
-- Tração em empate, pulmão zerado.
+- Ciclo ferrovia e TMM elevados por reflexo da evacuação do prédio (COI), segregação de material e reflexo de tração atrás;
+- Sistema de abastecimento do PIAL fora das 06h50 até 12h50;
+- Tração atrás;
+- 06h — Ociosidade por antecipação em D-1 e segregação de lotes de FCKL/FCLE e SIO2;
+- 15h — VV6 e VV7 TR1113 sonda / VV8 sonda na ER05 / VV2 segregação de material do M006203 FCKL destinado para T124 / VV6 segregação de material do M202203 FCKL destinado para o O134, aguardando finalizar o VV8.
